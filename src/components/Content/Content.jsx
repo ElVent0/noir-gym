@@ -1,144 +1,29 @@
-import LeftPart from "../LeftPart/LeftPart";
-import RightPart from "../RightPart/RightPart";
-import { ContentBlock } from "./Content.styled";
-import { useState, useEffect, useRef } from "react";
-import { getData } from "../../api/apiWeather";
-import { getDataFromSearch } from "../../api/apiWeather";
-import { useNavigate } from "react-router-dom";
-import { getLocation } from "../../api/apiLocation";
+import { ContentStyled, List, Item, Link } from "./Content.styled";
 
 const Content = () => {
-  const currentHours = useState(new Date().getHours());
-
-  const navigate = useNavigate();
-  useEffect(() => {
-    navigate("/?day=0");
-  }, []);
-
-  const [weatherData, setWeatherData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [chosenLat, setChosenLat] = useState(null);
-  const [chosenLon, setChosenLon] = useState(null);
-  const [currentCity, setCurrentCity] = useState(null);
-  const [locationData, setLocationData] = useState(null);
-  const [cityName, setCityName] = useState("");
-
-  useEffect(() => {
-    setIsLoading(true);
-
-    const handleData = async () => {
-      try {
-        const fetchedData = await getData();
-        if (fetchedData) {
-          setWeatherData(fetchedData);
-        }
-      } catch (e) {
-        alert("На даний момент сервер не працює");
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    // if (localStorage.getItem("location")) {
-    //   const a = async (lat, lon) => {
-    //     try {
-    //       const fetchedData = await getDataFromSearch(lat, lon);
-    //       if (fetchedData) {
-    //         setWeatherData(fetchedData);
-    //         console.log("On change data", fetchedData);
-    //       }
-    //     } catch (e) {
-    //       alert("На даний момент сервер не працює");
-    //     }
-    //   };
-    //   a(
-    //     JSON.parse(localStorage.getItem("location")).latitude,
-    //     JSON.parse(localStorage.getItem("location")).longitude
-    //   );
-    // } else {
-    //   console.log("bad");
-    handleData();
-    // }
-  }, []);
-
-  const onChooseCity = async (lat, lon) => {
-    setChosenLat(lat);
-    setChosenLon(lon);
-    setCityName("");
-  };
-
-  useEffect(() => {
-    if (chosenLat != null && chosenLon != null) {
-      const a = async (lat, lon) => {
-        try {
-          const fetchedData = await getDataFromSearch(lat, lon);
-          if (fetchedData) {
-            setWeatherData(fetchedData);
-          }
-        } catch (e) {
-          alert("На даний момент сервер не працює");
-        }
-      };
-      a(chosenLat, chosenLon);
-    }
-  }, [chosenLat, chosenLon]);
-
-  // const handleData = async (cityName) => {
-  //   try {
-  //     const fetchedData = await getLocation(cityName);
-  //     if (fetchedData) {
-  //       setLocationData(fetchedData);
-  //       console.log(
-  //         "12345667768678685685687568568658-------------------------",
-  //         fetchedData
-  //       );
-  //     }
-  //     console.log(1234567890, locationData);
-  //   } catch (e) {
-  //     alert(e, "На даний момент сервер не працює hahaha");
-  //   }
-  // };
-
-  const onChangeInput = (e) => {
-    setCityName(e.currentTarget.value);
-    // handleData(cityName);
-  };
-
-  useEffect(() => {
-    const handleData = async () => {
-      try {
-        const fetchedData = await getLocation(cityName);
-        if (fetchedData) {
-          setLocationData(fetchedData);
-        }
-      } catch (e) {
-        alert("На даний момент сервер не працює");
-      }
-    };
-    handleData();
-  }, [cityName]);
-
-  const onReset = () => {
-    setCityName("");
-  };
-
   return (
-    <ContentBlock>
-      {/* {isLoading && <Loading />} */}
-      {!isLoading && (
-        <>
-          <LeftPart
-            weatherData={weatherData}
-            onChooseCity={onChooseCity}
-            onChangeInput={onChangeInput}
-            locationData={locationData}
-            cityName={cityName}
-            onReset={onReset}
-          />
-          <RightPart weatherData={weatherData} currentHours={currentHours[0]} />
-        </>
-      )}
-    </ContentBlock>
+    <ContentStyled>
+      <List>
+        <Item>
+          <Link to="/legs">Ноги</Link>
+        </Item>
+        <Item>
+          <Link to="/shoulders">Плечі</Link>
+        </Item>
+        <Item>
+          <Link to="/back">Спина</Link>
+        </Item>
+        <Item>
+          <Link to="/triceps">Трицепс</Link>
+        </Item>
+        <Item>
+          <Link to="/biceps">Біцепс</Link>
+        </Item>
+        <Item>
+          <Link to="/chest">Груди</Link>
+        </Item>
+      </List>
+    </ContentStyled>
   );
 };
 
