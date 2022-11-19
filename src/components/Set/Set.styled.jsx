@@ -100,6 +100,7 @@ export const Header = styled.div`
 `;
 
 export const Title = styled.h2`
+  max-width: 100%;
   font-size: 6vw;
   font-weight: 400;
   margin-right: auto;
@@ -111,7 +112,7 @@ export const ButtonDelete = styled.button`
   height: 7vw;
   border: none;
   background-color: #f9f9f9;
-  font-size: 5.6vw;
+  font-size: 5.4vw;
   /* color: #f57878; */
   color: #9d3bff;
   display: flex;
@@ -120,7 +121,7 @@ export const ButtonDelete = styled.button`
   padding: 0;
   cursor: pointer;
   transition: all 0.3s;
-  border-radius: 1vw;
+  border-radius: 2vw;
   &:hover,
   &:focus {
     color: #cf60ff;
@@ -140,7 +141,7 @@ export const ButtonDelete = styled.button`
 
 export const ExerciseList = styled.ul`
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: flex-end;
   gap: 2vw;
 `;
@@ -148,55 +149,83 @@ export const ExerciseList = styled.ul`
 export const ExerciseItem = styled.li`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 2vw;
+  background: linear-gradient(
+    225deg,
+    #ffffff90 0%,
+    #ffffff 60%,
+    #ffffff 70%,
+    #ffffffba 100%
+  );
+  color: #5c5c5c;
   display: flex;
   flex-direction: column;
   /* justify-content: space-between; */
   align-items: baseline;
-  background-color: #f9f9f9;
-  color: #5c5c5c;
+  /* background-color: #f9f9f9; */
   &:nth-child(1) {
-    width: 24vw;
+    width: 21vw;
     height: 24vw;
     font-size: 4vw;
     padding: 3vw 3vw 2vw 3vw;
   }
   &:nth-child(2) {
-    width: 23vw;
+    width: 20vw;
     height: 23vw;
     font-size: 3.4vw;
     padding: 3vw 3vw 2vw 3vw;
   }
   &:nth-child(3) {
-    width: 22vw;
+    width: 19vw;
     height: 22vw;
     font-size: 2.8vw;
     padding: 3vw 3vw 2vw 3vw;
   }
-  &:nth-child(4) {
+  &:last-child {
     width: 12vw;
-    height: 10.4vw;
+    height: 12vw;
     padding: 0;
-    & > button {
-      border: none;
-      background-color: transparent;
-      font-size: 4.4vw;
-      width: 100%;
-      height: 100%;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      color: #f9f9f9;
-      background: linear-gradient(180deg, #c53dff 2.54%, #9d3bff 100%);
-      border-radius: 2vw;
-      transition: all 0.3s;
-      &:hover,
-      &:focus {
-        background: linear-gradient(180deg, #d778ff 2.54%, #b66cff 100%);
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      }
-    }
+  }
+`;
+
+export const ExecutionInfo = styled.p`
+  color: #f8f8f8;
+  font-size: 3.6vw;
+  max-width: 64vw;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 2vw;
+  background: linear-gradient(
+    225deg,
+    #ffffff90 0%,
+    #ffffff 60%,
+    #ffffff 70%,
+    #ffffffba 100%
+  );
+  color: #5c5c5c;
+  padding: 0 3vw;
+  height: 12vw;
+  display: flex;
+  align-items: center;
+`;
+
+export const ButtonPlus = styled.button`
+  border: none;
+  background-color: transparent;
+  font-size: 4.4vw;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #f9f9f9;
+  background: linear-gradient(180deg, #c53dff 2.54%, #9d3bff 100%);
+  border-radius: 2vw;
+  transition: all 0.3s;
+  &:hover,
+  &:focus {
+    background: linear-gradient(180deg, #d778ff 2.54%, #b66cff 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 `;
 
@@ -273,4 +302,5 @@ export const Description = styled.p`
   color: #f9f9f9e6;
   font-size: 3.6vw;
   margin-bottom: 6vw;
+  max-width: 100%;
 `;
