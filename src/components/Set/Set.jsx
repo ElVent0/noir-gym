@@ -12,13 +12,11 @@ import {
   ExerciseItem,
   Paragraph,
   InfoBlock,
+  Description,
 } from "./Set.styled";
-import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import { BsArrowLeftShort } from "react-icons/bs";
-import { MdDelete } from "react-icons/md";
 import { AiFillFileAdd } from "react-icons/ai";
 import { FiEdit } from "react-icons/fi";
-import { RiAddLine } from "react-icons/ri";
 import { BsPlusLg } from "react-icons/bs";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { ImFileEmpty } from "react-icons/im";
@@ -30,6 +28,8 @@ const Set = ({ setType }) => {
     legs: [
       {
         exerciseName: "Жим лежачи",
+        description:
+          "Кілька слів для опису вправи, кілька слів для опису вправи",
         exerciseDescription: [
           { setsNumber: 4, repetitions: 8, weight: "20" },
           { setsNumber: 4, repetitions: 10, weight: "25" },
@@ -38,6 +38,8 @@ const Set = ({ setType }) => {
       },
       {
         exerciseName: "Гантелі на біцепс",
+        description:
+          "Кілька слів для опису вправи, кілька слів для опису вправи",
         exerciseDescription: [
           { setsNumber: 4, repetitions: 8, weight: "20" },
           { setsNumber: 4, repetitions: 10, weight: "25" },
@@ -46,6 +48,8 @@ const Set = ({ setType }) => {
       },
       {
         exerciseName: "Т-гриф",
+        description:
+          "Кілька слів для опису вправи, кілька слів для опису вправи",
         exerciseDescription: [
           { setsNumber: 4, repetitions: 8, weight: "20" },
           { setsNumber: 4, repetitions: 10, weight: "25" },
@@ -54,6 +58,8 @@ const Set = ({ setType }) => {
       },
       {
         exerciseName: "Жим Арнольда",
+        description:
+          "Кілька слів для опису вправи, кілька слів для опису вправи",
         exerciseDescription: [
           { setsNumber: 4, repetitions: 8, weight: "20" },
           { setsNumber: 4, repetitions: 10, weight: "25" },
@@ -100,6 +106,9 @@ const Set = ({ setType }) => {
                     <RiDeleteBin5Fill />
                   </ButtonDelete>
                 </Header>
+                {item.description && (
+                  <Description>{item.description}</Description>
+                )}
                 <ExerciseList>
                   <ExerciseItem>
                     <Paragraph>18.11</Paragraph>

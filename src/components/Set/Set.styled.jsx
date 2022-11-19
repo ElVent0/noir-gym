@@ -4,10 +4,13 @@ import { NavLink } from "react-router-dom";
 export const SetStyled = styled.div`
   width: 100%;
   min-height: 95.5vh;
-  background-color: #f9f9f9;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  /* background-color: #f9f9f9; */
   border-radius: 2vw;
   padding: 4vw;
+  background: linear-gradient(90deg, #323232 2.54%, #595959 100%);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 `;
 
 export const HeaderMenu = styled.div`
@@ -18,7 +21,7 @@ export const HeaderMenu = styled.div`
 `;
 
 export const Link = styled(NavLink)`
-  color: #5c5c5c;
+  color: #f9f9f9;
   /* background-color: #ad00ff; */
   text-align: center;
   border-radius: 2vw;
@@ -31,12 +34,12 @@ export const Link = styled(NavLink)`
   transition: all 0.3s;
   &:hover,
   &:focus {
-    color: #a0a0a0;
+    color: #e8e8e8;
   }
 `;
 
 export const ButtonAdd = styled.button`
-  color: #8e5ac2;
+  color: #f9f9f9;
   background-color: transparent;
   text-align: center;
   width: 40vw;
@@ -54,7 +57,7 @@ export const ButtonAdd = styled.button`
   transition: all 0.3s;
   &:hover,
   &:focus {
-    color: #a993be;
+    color: #dddddd;
   }
   > span {
     margin-left: 1.6vw;
@@ -69,7 +72,14 @@ export const List = styled.ul``;
 export const Item = styled.li`
   /* border-bottom: 1px solid #c8c8c8; */
   /* padding: 6vw 2vw; */
-  background: linear-gradient(180deg, #faf0ff 0%, #ecd7ff 100%);
+  /* background: linear-gradient(180deg, #faf0ff3a 0%, #ecd7ff60 100%); */
+  background: linear-gradient(
+    135deg,
+    #e2e2e263 0%,
+    #ffffff81 30%,
+    #e2e2e263 100%
+  );
+  /* background-color: #ffffff5c; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 2vw;
   padding: 6vw 3vw 3vw 3vw;
@@ -86,43 +96,44 @@ export const Item = styled.li`
 
 export const Header = styled.div`
   display: flex;
-  margin-bottom: 6vw;
+  margin-bottom: 4vw;
 `;
 
 export const Title = styled.h2`
   font-size: 6vw;
   font-weight: 400;
   margin-right: auto;
-  color: #5c5c5c;
+  color: #f9f9f9;
 `;
 
 export const ButtonDelete = styled.button`
-  width: 6vw;
-  height: 6vw;
+  width: 7vw;
+  height: 7vw;
   border: none;
-  background-color: transparent;
-  font-size: 6vw;
+  background-color: #f9f9f9;
+  font-size: 5.6vw;
   /* color: #f57878; */
-  color: #8e5ac2;
+  color: #9d3bff;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
-  position: relative;
-  top: 1vw;
   cursor: pointer;
   transition: all 0.3s;
+  border-radius: 1vw;
   &:hover,
   &:focus {
-    color: #a993be;
+    color: #cf60ff;
+    background-color: #e4e4e4;
   }
   &:first-of-type {
-    font-size: 5.6vw;
-    color: #5c5c5c;
-    margin-right: 3vw;
+    font-size: 7vw;
+    color: #f9f9f9;
+    margin-right: 4vw;
+    background-color: transparent;
     &:hover,
     &:focus {
-      color: #a0a0a0;
+      color: #dedede;
     }
   }
 `;
@@ -144,26 +155,26 @@ export const ExerciseItem = styled.li`
   background-color: #f9f9f9;
   color: #5c5c5c;
   &:nth-child(1) {
-    width: 22vw;
+    width: 24vw;
     height: 24vw;
-    /* font-size: 5vw; */
+    font-size: 4vw;
     padding: 3vw 3vw 2vw 3vw;
   }
   &:nth-child(2) {
-    width: 22vw;
+    width: 23vw;
     height: 23vw;
-    /* font-size: 4.4vw; */
+    font-size: 3.4vw;
     padding: 3vw 3vw 2vw 3vw;
   }
   &:nth-child(3) {
     width: 22vw;
     height: 22vw;
-    /* font-size: 3.8vw; */
+    font-size: 2.8vw;
     padding: 3vw 3vw 2vw 3vw;
   }
   &:nth-child(4) {
     width: 12vw;
-    height: 12vw;
+    height: 10.4vw;
     padding: 0;
     & > button {
       border: none;
@@ -191,19 +202,19 @@ export const ExerciseItem = styled.li`
 
 export const Paragraph = styled.p`
   &:nth-child(1) {
-    font-size: 3.4vw;
+    /* font-size: 3.4vw; */
     margin-bottom: auto;
     opacity: 0.6;
   }
   &:nth-child(2) {
-    font-size: 3.4vw;
-    margin-bottom: 0.4vw;
+    /* font-size: 3.4vw; */
+    /* margin-bottom: 0.4vw; */
     & > span {
-      font-size: 4.4vw;
+      font-size: 4.8vw;
     }
   }
   &:nth-child(3) {
-    font-size: 3vw;
+    /* font-size: 3vw; */
     & > span {
       font-size: 4vw;
     }
@@ -222,7 +233,7 @@ export const InfoBlock = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #5c5c5c;
+  color: #f9f9f9;
   & > svg {
     display: block;
     margin-left: auto;
@@ -256,4 +267,10 @@ export const InfoBlock = styled.div`
       color: #f9f9f9;
     }
   }
+`;
+
+export const Description = styled.p`
+  color: #f9f9f9e6;
+  font-size: 3.6vw;
+  margin-bottom: 6vw;
 `;

@@ -1,29 +1,66 @@
-import { ContentStyled, List, Item, Link } from "./Content.styled";
+import {
+  StyledContent,
+  ContentStyled,
+  MainContent,
+  Logo,
+  List,
+  Item,
+  Link,
+  Paragraph,
+  NumberOfExercises,
+  Info,
+} from "./Content.styled";
+import LogoLight from "../../media/logo-light.png";
+// import LogoDark from "../../media/logo-dark.png";
 
 const Content = () => {
   return (
-    <ContentStyled>
-      <List>
-        <Item>
-          <Link to="/legs">Ноги</Link>
-        </Item>
-        <Item>
-          <Link to="/shoulders">Плечі</Link>
-        </Item>
-        <Item>
-          <Link to="/back">Спина</Link>
-        </Item>
-        <Item>
-          <Link to="/triceps">Трицепс</Link>
-        </Item>
-        <Item>
-          <Link to="/biceps">Біцепс</Link>
-        </Item>
-        <Item>
-          <Link to="/chest">Груди</Link>
-        </Item>
-      </List>
-    </ContentStyled>
+    <StyledContent>
+      <Logo src={LogoLight}></Logo>
+      <ContentStyled>
+        <MainContent>
+          <Info>Що плануєш робити сьогодні?</Info>
+          <List>
+            <Item>
+              <Link to="/legs">
+                <Paragraph>Ноги</Paragraph>
+                <NumberOfExercises>Вправи: 7</NumberOfExercises>
+              </Link>
+            </Item>
+            <Item>
+              <Link to="/shoulders">
+                <Paragraph>Плечі</Paragraph>
+                <NumberOfExercises>Вправи: 7</NumberOfExercises>
+              </Link>
+            </Item>
+            <Item>
+              <Link to="/back">
+                <Paragraph>Спина</Paragraph>
+                <NumberOfExercises>Вправи: 7</NumberOfExercises>
+              </Link>
+            </Item>
+            <Item>
+              <Link to="/triceps">
+                <Paragraph>Трицепс</Paragraph>
+                <NumberOfExercises>Вправи: 7</NumberOfExercises>
+              </Link>
+            </Item>
+            <Item>
+              <Link to="/biceps">
+                <Paragraph>Біцепс</Paragraph>
+                <NumberOfExercises>Вправи: 7</NumberOfExercises>
+              </Link>
+            </Item>
+            <Item>
+              <Link to="/chest">
+                <Paragraph>Груди</Paragraph>
+                <NumberOfExercises>Вправи: 7</NumberOfExercises>
+              </Link>
+            </Item>
+          </List>
+        </MainContent>
+      </ContentStyled>
+    </StyledContent>
   );
 };
 
