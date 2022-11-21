@@ -24,37 +24,37 @@ const Content = () => {
             <Item>
               <Link to="/legs">
                 <Paragraph>Ноги</Paragraph>
-                <NumberOfExercises>Вправи: 7</NumberOfExercises>
+                <NumberOfExercises>7 вправ</NumberOfExercises>
               </Link>
             </Item>
             <Item>
               <Link to="/shoulders">
                 <Paragraph>Плечі</Paragraph>
-                <NumberOfExercises>Вправи: 7</NumberOfExercises>
+                <NumberOfExercises>7 вправ</NumberOfExercises>
               </Link>
             </Item>
             <Item>
               <Link to="/back">
                 <Paragraph>Спина</Paragraph>
-                <NumberOfExercises>Вправи: 7</NumberOfExercises>
+                <NumberOfExercises>7 вправ</NumberOfExercises>
               </Link>
             </Item>
             <Item>
               <Link to="/triceps">
                 <Paragraph>Трицепс</Paragraph>
-                <NumberOfExercises>Вправи: 7</NumberOfExercises>
+                <NumberOfExercises>7 вправ</NumberOfExercises>
               </Link>
             </Item>
             <Item>
               <Link to="/biceps">
                 <Paragraph>Біцепс</Paragraph>
-                <NumberOfExercises>Вправи: 7</NumberOfExercises>
+                <NumberOfExercises>7 вправ</NumberOfExercises>
               </Link>
             </Item>
             <Item>
               <Link to="/chest">
                 <Paragraph>Груди</Paragraph>
-                <NumberOfExercises>Вправи: 7</NumberOfExercises>
+                <NumberOfExercises>7 вправ</NumberOfExercises>
               </Link>
             </Item>
           </List>

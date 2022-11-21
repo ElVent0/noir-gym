@@ -17,6 +17,8 @@ import {
   ExecutionInfo,
 } from "./Set.styled";
 import ModalAddExercise from "../ModalAddExercise/ModalAddExercise";
+import ModalDeleteExercise from "../ModalDeleteExercise/ModalDeleteExercise";
+import ModalEditExercise from "../ModalEditExercise/ModalEditExercise";
 import { BsArrowLeftShort } from "react-icons/bs";
 import { AiFillFileAdd } from "react-icons/ai";
 import { FiEdit } from "react-icons/fi";
@@ -26,24 +28,74 @@ import { ImFileEmpty } from "react-icons/im";
 import { useState, useEffect } from "react";
 // import Exercise from "../Exercise/Exercise";
 
-const Set = ({ exercises, onCreateExercise }) => {
-  const [openModal, setOpenModal] = useState(false);
+const Set = ({
+  exercises,
+  onCreateExercise,
+  onDeleteExercise,
+  onChangeExercise,
+}) => {
+  const [openModal, setOpenModal] = useState({
+    status: null,
+    name: null,
+    description: null,
+    id: null,
+  });
 
-  const onToggleModalAddExercise = () => {
-    setOpenModal((prevState) => !prevState);
+  const onCloseModal = () => {
+    setOpenModal((prevState) => {
+      return {
+        ...prevState,
+        status: null,
+        name: null,
+        description: null,
+        id: null,
+      };
+    });
   };
 
   const onAddExercise = () => {
-    onToggleModalAddExercise();
+    setOpenModal((prevState) => {
+      return {
+        ...prevState,
+        status: "add",
+        name: null,
+        description: null,
+        id: null,
+      };
+    });
   };
 
-  const onCloseModal = () => {
-    onToggleModalAddExercise();
+  const onDelExercise = (name, id) => {
+    setOpenModal((prevState) => {
+      return {
+        ...prevState,
+        status: "delete",
+        name: name,
+        description: null,
+        id: id,
+      };
+    });
+  };
+
+  const onEditExercise = (name, description, id) => {
+    setOpenModal((prevState) => {
+      return { ...prevState, status: "edit", name, description, id };
+    });
   };
 
   const onAddExerciseToState = (data) => {
-    onToggleModalAddExercise();
     onCreateExercise(data);
+    onCloseModal();
+  };
+
+  const onDelExerciseFromState = (id) => {
+    onDeleteExercise(id);
+    onCloseModal();
+  };
+
+  const onEditExerciseInState = (data) => {
+    onChangeExercise(data);
+    onCloseModal();
   };
 
   return (
@@ -63,15 +115,26 @@ const Set = ({ exercises, onCreateExercise }) => {
         {exercises.length > 0 ? (
           <List>
             {exercises.map((item) => {
-              // console.log(item);
               return (
-                <Item>
+                <Item key={item.id}>
                   <Header>
                     <Title>{item.exerciseName}</Title>
-                    <ButtonDelete type="button">
+                    <ButtonDelete
+                      type="button"
+                      onClick={() =>
+                        onEditExercise(
+                          item.exerciseName,
+                          item.description,
+                          item.id
+                        )
+                      }
+                    >
                       <FiEdit />
                     </ButtonDelete>
-                    <ButtonDelete type="button">
+                    <ButtonDelete
+                      type="button"
+                      onClick={() => onDelExercise(item.exerciseName, item.id)}
+                    >
                       <RiDeleteBin5Fill />
                     </ButtonDelete>
                   </Header>
@@ -174,10 +237,27 @@ const Set = ({ exercises, onCreateExercise }) => {
           </InfoBlock>
         )}
       </SetStyled>
-      {openModal && (
+      {openModal.status === "add" && (
         <ModalAddExercise
           onCloseModal={onCloseModal}
           onAddExerciseToState={onAddExerciseToState}
+        />
+      )}
+      {openModal.status === "delete" && (
+        <ModalDeleteExercise
+          onCloseModal={onCloseModal}
+          onDelExerciseFromState={onDelExerciseFromState}
+          name={openModal.name}
+          id={openModal.id}
+        />
+      )}
+      {openModal.status === "edit" && (
+        <ModalEditExercise
+          onCloseModal={onCloseModal}
+          onEditExerciseInState={onEditExerciseInState}
+          name={openModal.name}
+          description={openModal.description}
+          id={openModal.id}
         />
       )}
     </>

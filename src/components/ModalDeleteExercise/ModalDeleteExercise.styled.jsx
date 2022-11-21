@@ -32,13 +32,6 @@ export const ModalAddExerciseStyled = styled.div`
   }
 `;
 
-export const Title = styled.h2`
-  margin-bottom: 6vw;
-  text-align: center;
-  font-size: 8vw;
-  color: #5c5c5c;
-`;
-
 export const ModalButtons = styled.div`
   display: flex;
   justify-content: center;
@@ -78,51 +71,10 @@ export const ButtonModal = styled.button`
   }
 `;
 
-export const AddExerciseForm = styled.form`
-  /* display: flex; */
-`;
-
-export const AddExerciseInput = styled.input`
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 4vw;
-  background-color: transparent;
-  border: 0.4vw solid #5c5c5c60;
-  border-radius: 2vw;
-  /* border-bottom: 1px solid #5c5c5c; */
-  width: 68vw;
-  /* height: 8vw; */
+export const Title = styled.h2`
   font-size: 4.4vw;
-  color: #5c5c5c;
-  padding: 2vw 4vw;
-  &::placeholder {
-    color: #5c5c5c60;
-  }
-  :focus {
-    outline: none;
-    border: 0.4vw solid #5c5c5cd6;
-  }
-`;
-
-export const Textarea = styled.textarea`
-  display: block;
+  font-weight: 400;
+  width: 68vw;
   margin-left: auto;
   margin-right: auto;
-  background-color: transparent;
-  border: 0.4vw solid #5c5c5c60;
-  border-radius: 2vw;
-  width: 68vw;
-  font-size: 4.3vw;
-  color: #5c5c5c;
-  padding: 2vw 4vw;
-  margin-bottom: 0;
-  resize: none;
-  &::placeholder {
-    color: #5c5c5c60;
-  }
-  :focus {
-    outline: none;
-    border: 0.4vw solid #5c5c5cd6;
-  }
 `;

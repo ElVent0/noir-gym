@@ -7,12 +7,17 @@ import {
   AddExerciseInput,
   Textarea,
   Title,
-} from "./ModalAddExercise.styled";
-import { FaDumbbell } from "react-icons/fa";
+} from "./ModalEditExercise.styled";
+import { FiEdit } from "react-icons/fi";
 import { useState, useEffect } from "react";
-import { nanoid } from "nanoid";
 
-const ModalAddExercise = ({ onCloseModal, onAddExerciseToState }) => {
+const ModalEditExercise = ({
+  onCloseModal,
+  onEditExerciseInState,
+  name: nameOfExercise,
+  description: descriptionOfExercise,
+  id,
+}) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
 
@@ -26,8 +31,7 @@ const ModalAddExercise = ({ onCloseModal, onAddExerciseToState }) => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    const id = nanoid(10);
-    onAddExerciseToState({ id, name, description });
+    onEditExerciseInState({ id, name, description });
   };
 
   const handleCloseModal = () => {
@@ -37,13 +41,13 @@ const ModalAddExercise = ({ onCloseModal, onAddExerciseToState }) => {
   return (
     <ModalBackdrop>
       <ModalAddExerciseStyled>
-        <FaDumbbell />
-        <Title>Нова вправа</Title>
+        <FiEdit />
+        <Title>Редагувати</Title>
         <AddExerciseForm onSubmit={onFormSubmit}>
           <AddExerciseInput
             type="text"
             name="name"
-            placeholder="Назва вправи"
+            placeholder={nameOfExercise}
             onChange={onChangeInput}
             value={name}
             autocomplete="off"
@@ -52,7 +56,7 @@ const ModalAddExercise = ({ onCloseModal, onAddExerciseToState }) => {
           <Textarea
             type="text"
             name="description"
-            placeholder="Коментар (не обов'язково)"
+            placeholder={descriptionOfExercise}
             onChange={onChangeInput}
             value={description}
             rows="4"
@@ -72,4 +76,4 @@ const ModalAddExercise = ({ onCloseModal, onAddExerciseToState }) => {
   );
 };
 
-export default ModalAddExercise;
+export default ModalEditExercise;

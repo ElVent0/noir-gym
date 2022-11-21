@@ -101,18 +101,26 @@ export const Header = styled.div`
 
 export const Title = styled.h2`
   max-width: 100%;
-  font-size: 6vw;
+  font-size: 5.4vw;
   font-weight: 400;
+  padding-right: 2vw;
   margin-right: auto;
   color: #f9f9f9;
 `;
 
+export const Description = styled.p`
+  color: #f9f9f9e6;
+  font-size: 3.6vw;
+  margin-bottom: 4vw;
+  max-width: 100%;
+`;
+
 export const ButtonDelete = styled.button`
-  width: 7vw;
+  min-width: 7vw;
   height: 7vw;
   border: none;
   background-color: #f9f9f9;
-  font-size: 5.4vw;
+  font-size: 5vw;
   /* color: #f57878; */
   color: #9d3bff;
   display: flex;
@@ -128,14 +136,19 @@ export const ButtonDelete = styled.button`
     background-color: #e4e4e4;
   }
   &:first-of-type {
-    font-size: 7vw;
-    color: #f9f9f9;
     margin-right: 4vw;
+    font-size: 4.4vw;
+    color: #5c5c5c;
+    & > svg {
+      position: relative;
+      left: 0.2vw;
+    }
+    /* color: #f9f9f9;
     background-color: transparent;
     &:hover,
     &:focus {
       color: #dedede;
-    }
+    } */
   }
 `;
 
@@ -296,11 +309,4 @@ export const InfoBlock = styled.div`
       color: #f9f9f9;
     }
   }
-`;
-
-export const Description = styled.p`
-  color: #f9f9f9e6;
-  font-size: 3.6vw;
-  margin-bottom: 6vw;
-  max-width: 100%;
 `;

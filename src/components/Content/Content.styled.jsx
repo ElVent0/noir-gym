@@ -50,10 +50,9 @@ export const List = styled.ul`
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 2%;
+  gap: 2vw;
 `;
 export const Item = styled.li`
-  margin-bottom: 2%;
   width: 44%;
   flex-grow: 1;
   background-color: #f9f9f9;
@@ -80,12 +79,6 @@ export const Item = styled.li`
   &:nth-child(6) {
     background-image: url(${imageOne});
   }
-  &:nth-child(5) {
-    margin-bottom: 0;
-  }
-  &:nth-child(6) {
-    margin-bottom: 0;
-  }
 `;
 
 export const Link = styled(NavLink)`
@@ -95,11 +88,11 @@ export const Link = styled(NavLink)`
 `;
 
 export const Paragraph = styled.p`
-  font-size: 5vw;
+  font-size: 4.8vw;
   font-weight: 600;
   /* margin-bottom: 1vw; */
 `;
 
 export const NumberOfExercises = styled.p`
-  font-size: 3.6vw;
+  font-size: 3.4vw;
 `;

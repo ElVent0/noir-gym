@@ -27,7 +27,7 @@ export const ModalAddExerciseStyled = styled.div`
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 8vw;
-    color: #8000ff;
+    color: #5c5c5c;
     font-size: 22vw;
   }
 `;
@@ -90,9 +90,7 @@ export const AddExerciseInput = styled.input`
   background-color: transparent;
   border: 0.4vw solid #5c5c5c60;
   border-radius: 2vw;
-  /* border-bottom: 1px solid #5c5c5c; */
   width: 68vw;
-  /* height: 8vw; */
   font-size: 4.4vw;
   color: #5c5c5c;
   padding: 2vw 4vw;

@@ -13,6 +13,7 @@ const App = () => {
   const [exercises, setExercises] = useState({
     legs: [
       {
+        id: "1234567890",
         exerciseName: "Жим лежачи",
         description:
           "Кілька слів для опису вправи, кілька слів для опису вправи",
@@ -23,6 +24,7 @@ const App = () => {
         ],
       },
       {
+        id: "1234567891",
         exerciseName: "Гантелі на біцепс",
         description:
           "Кілька слів для опису вправи, кілька слів для опису вправи",
@@ -33,6 +35,7 @@ const App = () => {
         ],
       },
       {
+        id: "1234567892",
         exerciseName: "Т-гриф",
         description:
           "Кілька слів для опису вправи, кілька слів для опису вправи",
@@ -43,6 +46,7 @@ const App = () => {
         ],
       },
       {
+        id: "1234567893",
         exerciseName: "Жим Арнольда",
         description:
           "Кілька слів для опису вправи, кілька слів для опису вправи",
@@ -61,92 +65,59 @@ const App = () => {
   });
 
   const handleCreateExercise = (data) => {
-    console.log("---------------------------------------", data);
-
     if (data.name !== "") {
-      switch (data.exercisesType) {
-        case "legs":
-          setExercises((prevState) => ({
-            ...prevState,
-            legs: [
-              {
-                exerciseName: data.name,
-                description: data.description,
-                exerciseDescription: [],
-              },
-              ...prevState.legs,
-            ],
-          }));
-          break;
-        case "back":
-          setExercises((prevState) => ({
-            ...prevState,
-            back: [
-              {
-                exerciseName: data.name,
-                description: data.description,
-                exerciseDescription: [],
-              },
-              ...prevState.back,
-            ],
-          }));
-          break;
-        case "biceps":
-          setExercises((prevState) => ({
-            ...prevState,
-            biceps: [
-              {
-                exerciseName: data.name,
-                description: data.description,
-                exerciseDescription: [],
-              },
-              ...prevState.biceps,
-            ],
-          }));
-          break;
-        case "triceps":
-          setExercises((prevState) => ({
-            ...prevState,
-            triceps: [
-              {
-                exerciseName: data.name,
-                description: data.description,
-                exerciseDescription: [],
-              },
-              ...prevState.triceps,
-            ],
-          }));
-          break;
-        case "chest":
-          setExercises((prevState) => ({
-            ...prevState,
-            chest: [
-              {
-                exerciseName: data.name,
-                description: data.description,
-                exerciseDescription: [],
-              },
-              ...prevState.chest,
-            ],
-          }));
-          break;
-        case "shoulders":
-          setExercises((prevState) => ({
-            ...prevState,
-            shoulders: [
-              {
-                exerciseName: data.name,
-                description: data.description,
-                exerciseDescription: [],
-              },
-              ...prevState.shoulders,
-            ],
-          }));
-          break;
-        default:
-          console.log("Wrong case");
-      }
+      setExercises((prevState) => ({
+        ...prevState,
+        [data.exercisesType]: [
+          {
+            id: data.id,
+            exerciseName: data.name,
+            description: data.description,
+            exerciseDescription: [],
+          },
+          ...prevState[data.exercisesType],
+        ],
+      }));
     }
+  };
+
+  const handleDeleteExercise = ({ exercisesType, id }) => {
+    setExercises((prevState) => ({
+      ...prevState,
+      [exercisesType]: [
+        ...prevState[exercisesType].filter((item) => item.id !== id),
+      ],
+    }));
+  };
+
+  const handleEditExercise = ({ exercisesType, id, name, description }) => {
+    setExercises((prevState) => ({
+      ...prevState,
+      [exercisesType]: [
+        ...prevState[exercisesType]
+          .filter((item) => item.id !== id)
+          .slice(
+            0,
+            prevState[exercisesType].findIndex((item) => item.id === id)
+          ),
+        {
+          id: id,
+          exerciseName: name,
+          description: description,
+          exerciseDescription: [
+            ...prevState[exercisesType][
+              prevState[exercisesType].findIndex((item) => item.id === id)
+            ].exerciseDescription,
+          ],
+        },
+        ...prevState[exercisesType]
+          .filter((item) => item.id !== id)
+          .slice(
+            prevState[exercisesType].findIndex((item) => item.id === id),
+            prevState[exercisesType].length
+          ),
+      ],
+    }));
   };
 
   return (
@@ -159,7 +130,8 @@ const App = () => {
             <Legs
               exercises={exercises.legs}
               handleCreateExercise={handleCreateExercise}
-              // onOpenModalAddExercise={onOpenModalAddExercise}
+              handleDeleteExercise={handleDeleteExercise}
+              handleEditExercise={handleEditExercise}
             />
           }
         ></Route>
@@ -169,7 +141,8 @@ const App = () => {
             <Shoulders
               exercises={exercises.shoulders}
               handleCreateExercise={handleCreateExercise}
-              // onOpenModalAddExercise={onOpenModalAddExercise}
+              handleDeleteExercise={handleDeleteExercise}
+              handleEditExercise={handleEditExercise}
             />
           }
         ></Route>
@@ -179,7 +152,8 @@ const App = () => {
             <Back
               exercises={exercises.back}
               handleCreateExercise={handleCreateExercise}
-              // onOpenModalAddExercise={onOpenModalAddExercise}
+              handleDeleteExercise={handleDeleteExercise}
+              handleEditExercise={handleEditExercise}
             />
           }
         ></Route>
@@ -189,7 +163,8 @@ const App = () => {
             <Triceps
               exercises={exercises.triceps}
               handleCreateExercise={handleCreateExercise}
-              // onOpenModalAddExercise={onOpenModalAddExercise}
+              handleDeleteExercise={handleDeleteExercise}
+              handleEditExercise={handleEditExercise}
             />
           }
         ></Route>
@@ -199,7 +174,8 @@ const App = () => {
             <Biceps
               exercises={exercises.biceps}
               handleCreateExercise={handleCreateExercise}
-              // onOpenModalAddExercise={onOpenModalAddExercise}
+              handleDeleteExercise={handleDeleteExercise}
+              handleEditExercise={handleEditExercise}
             />
           }
         ></Route>
@@ -209,7 +185,8 @@ const App = () => {
             <Chest
               exercises={exercises.chest}
               handleCreateExercise={handleCreateExercise}
-              // onOpenModalAddExercise={onOpenModalAddExercise}
+              handleDeleteExercise={handleDeleteExercise}
+              handleEditExercise={handleEditExercise}
             />
           }
         ></Route>
