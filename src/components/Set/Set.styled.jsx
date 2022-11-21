@@ -75,9 +75,10 @@ export const Item = styled.li`
   /* background: linear-gradient(180deg, #faf0ff3a 0%, #ecd7ff60 100%); */
   background: linear-gradient(
     135deg,
-    #e2e2e263 0%,
-    #ffffff81 30%,
-    #e2e2e263 100%
+    #e2e2e290 0%,
+    #ffffff50 30%,
+    #e2e2e210 70%,
+    #e2e2e230 100%
   );
   /* background-color: #ffffff5c; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -106,6 +107,7 @@ export const Title = styled.h2`
   padding-right: 2vw;
   margin-right: auto;
   color: #f9f9f9;
+  overflow-x: scroll;
 `;
 
 export const Description = styled.p`
@@ -113,6 +115,7 @@ export const Description = styled.p`
   font-size: 3.6vw;
   margin-bottom: 4vw;
   max-width: 100%;
+  overflow-x: scroll;
 `;
 
 export const ButtonDelete = styled.button`

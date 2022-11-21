@@ -67,7 +67,7 @@ const ModalEditExercise = ({
               Скасувати
             </ButtonModal>
             <ButtonModal type="submit" onClick={onFormSubmit}>
-              Додати
+              Змінити
             </ButtonModal>
           </ModalButtons>
         </AddExerciseForm>
