@@ -9,7 +9,7 @@ import {
   Title,
 } from "./ModalAddExercise.styled";
 import { GiWeightLiftingUp } from "react-icons/gi";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { nanoid } from "nanoid";
 
 const ModalAddExercise = ({ onCloseModal, onAddExerciseToState }) => {

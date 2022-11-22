@@ -26,8 +26,7 @@ import { FiEdit } from "react-icons/fi";
 import { BsPlusLg } from "react-icons/bs";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { ImFileEmpty } from "react-icons/im";
-import { useState, useEffect } from "react";
-// import Exercise from "../Exercise/Exercise";
+import { useState } from "react";
 
 const Set = ({
   exercises,
@@ -42,8 +41,6 @@ const Set = ({
     description: null,
     id: null,
   });
-
-  console.log(exercises);
 
   const onCloseModal = () => {
     setOpenModal((prevState) => {

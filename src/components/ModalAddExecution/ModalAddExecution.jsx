@@ -9,10 +9,9 @@ import {
   Item,
   Button,
   ActiveButton,
-  Title,
 } from "./ModalAddExecution.styled";
 import { FaDumbbell } from "react-icons/fa";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const ModalAddExercise = ({ onCloseModal, onAddExecutionToState, id }) => {
   // console.log("id", id);
@@ -92,9 +91,9 @@ const ModalAddExercise = ({ onCloseModal, onAddExecutionToState, id }) => {
           <Paragraph>Яка вага?</Paragraph>
           <List>
             {weightOptions.map((item) => {
+              let listItem;
               if (executionData.weight !== item) {
-                // console.log(1, executionData.weight, item);
-                return (
+                listItem = (
                   <Item key={item}>
                     <Button type="button" name={item} onClick={onUpdateWeigth}>
                       {item}
@@ -102,8 +101,7 @@ const ModalAddExercise = ({ onCloseModal, onAddExecutionToState, id }) => {
                   </Item>
                 );
               } else if (executionData.weight === item) {
-                // console.log(2, executionData.weight, item);
-                return (
+                listItem = (
                   <Item key={item}>
                     <ActiveButton
                       type="button"
@@ -115,14 +113,15 @@ const ModalAddExercise = ({ onCloseModal, onAddExecutionToState, id }) => {
                   </Item>
                 );
               }
+              return listItem;
             })}
           </List>
           <Paragraph>Скільки підходів?</Paragraph>
           <List>
             {approachesOptions.map((item) => {
+              let listItem;
               if (executionData.approaches !== item) {
-                // console.log(1, executionData.approaches, item);
-                return (
+                listItem = (
                   <Item key={item}>
                     <Button
                       type="button"
@@ -134,8 +133,7 @@ const ModalAddExercise = ({ onCloseModal, onAddExecutionToState, id }) => {
                   </Item>
                 );
               } else if (executionData.approaches === item) {
-                // console.log(2, executionData.approaches, item);
-                return (
+                listItem = (
                   <Item key={item}>
                     <ActiveButton
                       type="button"
@@ -147,14 +145,15 @@ const ModalAddExercise = ({ onCloseModal, onAddExecutionToState, id }) => {
                   </Item>
                 );
               }
+              return listItem;
             })}
           </List>
           <Paragraph>Скільки повторень?</Paragraph>
           <List>
             {repetitionsOptions.map((item) => {
+              let listItem;
               if (executionData.repetitions !== item) {
-                // console.log(1, executionData.repetitions, item);
-                return (
+                listItem = (
                   <Item key={item}>
                     <Button
                       type="button"
@@ -166,8 +165,7 @@ const ModalAddExercise = ({ onCloseModal, onAddExecutionToState, id }) => {
                   </Item>
                 );
               } else if (executionData.repetitions === item) {
-                // console.log(2, executionData.repetitions, item);
-                return (
+                listItem = (
                   <Item key={item}>
                     <ActiveButton
                       type="button"
@@ -179,6 +177,7 @@ const ModalAddExercise = ({ onCloseModal, onAddExecutionToState, id }) => {
                   </Item>
                 );
               }
+              return listItem;
             })}
           </List>
           <ModalButtons>

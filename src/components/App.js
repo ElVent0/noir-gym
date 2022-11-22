@@ -8,61 +8,29 @@ import Chest from "./Chest/Chest";
 import Layout from "./Layout/Layout";
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { presetOne } from "../data/presets";
 
 const App = () => {
-  const [exercises, setExercises] = useState({
-    legs: [
-      {
-        id: "1234567890",
-        exerciseName: "Жим лежачи",
-        description:
-          "Кілька слів для опису вправи, кілька слів для опису вправи",
-        exerciseDescription: [
-          { setsNumber: 4, repetitions: 8, weight: "20", date: "24.11" },
-          { setsNumber: 4, repetitions: 10, weight: "25", date: "22.11" },
-          { setsNumber: 4, repetitions: 12, weight: "30", date: "20.11" },
-        ],
-      },
-      {
-        id: "1234567891",
-        exerciseName: "Гантелі на біцепс",
-        description:
-          "Кілька слів для опису вправи, кілька слів для опису вправи",
-        exerciseDescription: [
-          // { setsNumber: 4, repetitions: 8, weight: "20" },
-          // { setsNumber: 4, repetitions: 10, weight: "25" },
-          // { setsNumber: 4, repetitions: 12, weight: "30" },
-        ],
-      },
-      {
-        id: "1234567892",
-        exerciseName: "Т-гриф",
-        description:
-          "Кілька слів для опису вправи, кілька слів для опису вправи",
-        exerciseDescription: [
-          // { setsNumber: 4, repetitions: 8, weight: "20" },
-          // { setsNumber: 4, repetitions: 10, weight: "25" },
-          // { setsNumber: 4, repetitions: 12, weight: "30" },
-        ],
-      },
-      {
-        id: "1234567893",
-        exerciseName: "Жим Арнольда",
-        description:
-          "Кілька слів для опису вправи, кілька слів для опису вправи",
-        exerciseDescription: [
-          // { setsNumber: 4, repetitions: 8, weight: "20" },
-          // { setsNumber: 4, repetitions: 10, weight: "25" },
-          // { setsNumber: 4, repetitions: 12, weight: "30" },
-        ],
-      },
-    ],
-    shoulders: [],
-    back: [],
-    triceps: [],
-    biceps: [],
-    chest: [],
-  });
+  const parsetData = () => {
+    try {
+      return JSON.parse(localStorage.getItem("exercisesSetForNoirGym"));
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const initData = () => {
+    if (parsetData()) {
+      return parsetData();
+    } else {
+      return presetOne;
+    }
+  };
+
+  const [exercises, setExercises] = useState(initData);
+
+  useEffect(() => {
+    localStorage.setItem("exercisesSetForNoirGym", JSON.stringify(exercises));
+  }, [exercises]);
 
   const handleCreateExercise = (data) => {
     if (data.name !== "") {
