@@ -19,6 +19,7 @@ import {
 import ModalAddExercise from "../ModalAddExercise/ModalAddExercise";
 import ModalDeleteExercise from "../ModalDeleteExercise/ModalDeleteExercise";
 import ModalEditExercise from "../ModalEditExercise/ModalEditExercise";
+import ModalAddExecution from "../ModalAddExecution/ModalAddExecution";
 import { BsArrowLeftShort } from "react-icons/bs";
 import { AiFillFileAdd } from "react-icons/ai";
 import { FiEdit } from "react-icons/fi";
@@ -31,6 +32,7 @@ import { useState, useEffect } from "react";
 const Set = ({
   exercises,
   onCreateExercise,
+  onAddNewExecution,
   onDeleteExercise,
   onChangeExercise,
 }) => {
@@ -40,6 +42,8 @@ const Set = ({
     description: null,
     id: null,
   });
+
+  console.log(exercises);
 
   const onCloseModal = () => {
     setOpenModal((prevState) => {
@@ -83,8 +87,20 @@ const Set = ({
     });
   };
 
+  const onAddExecution = (id) => {
+    // console.log(id);
+    setOpenModal((prevState) => {
+      return { ...prevState, status: "execution", id };
+    });
+  };
+
   const onAddExerciseToState = (data) => {
     onCreateExercise(data);
+    onCloseModal();
+  };
+
+  const onAddExecutionToState = (data) => {
+    onAddNewExecution(data);
     onCloseModal();
   };
 
@@ -147,7 +163,9 @@ const Set = ({
                         {item.exerciseDescription[0] && (
                           <ExerciseItem>
                             <>
-                              <Paragraph>18.11</Paragraph>
+                              <Paragraph>
+                                {item.exerciseDescription[0].date}
+                              </Paragraph>
                               <Paragraph>
                                 <span>
                                   {item.exerciseDescription[0].weight}
@@ -169,7 +187,9 @@ const Set = ({
                         {item.exerciseDescription[1] && (
                           <ExerciseItem>
                             <>
-                              <Paragraph>18.11</Paragraph>
+                              <Paragraph>
+                                {item.exerciseDescription[1].date}
+                              </Paragraph>
                               <Paragraph>
                                 <span>
                                   {item.exerciseDescription[1].weight}
@@ -191,7 +211,9 @@ const Set = ({
                         {item.exerciseDescription[2] && (
                           <ExerciseItem>
                             <>
-                              <Paragraph>18.11</Paragraph>
+                              <Paragraph>
+                                {item.exerciseDescription[2].date}
+                              </Paragraph>
                               <Paragraph>
                                 <span>
                                   {item.exerciseDescription[2].weight}
@@ -217,7 +239,12 @@ const Set = ({
                       </ExecutionInfo>
                     )}
                     <ExerciseItem>
-                      <ButtonPlus type="button">
+                      <ButtonPlus
+                        type="button"
+                        onClick={() => {
+                          onAddExecution(item.id);
+                        }}
+                      >
                         <BsPlusLg />
                       </ButtonPlus>
                     </ExerciseItem>
@@ -255,6 +282,15 @@ const Set = ({
         <ModalEditExercise
           onCloseModal={onCloseModal}
           onEditExerciseInState={onEditExerciseInState}
+          name={openModal.name}
+          description={openModal.description}
+          id={openModal.id}
+        />
+      )}
+      {openModal.status === "execution" && (
+        <ModalAddExecution
+          onCloseModal={onCloseModal}
+          onAddExecutionToState={onAddExecutionToState}
           name={openModal.name}
           description={openModal.description}
           id={openModal.id}

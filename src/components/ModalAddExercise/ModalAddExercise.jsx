@@ -8,7 +8,7 @@ import {
   Textarea,
   Title,
 } from "./ModalAddExercise.styled";
-import { FaDumbbell } from "react-icons/fa";
+import { GiWeightLiftingUp } from "react-icons/gi";
 import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 
@@ -37,7 +37,7 @@ const ModalAddExercise = ({ onCloseModal, onAddExerciseToState }) => {
   return (
     <ModalBackdrop>
       <ModalAddExerciseStyled>
-        <FaDumbbell />
+        <GiWeightLiftingUp />
         <Title>Нова вправа</Title>
         <AddExerciseForm onSubmit={onFormSubmit}>
           <AddExerciseInput

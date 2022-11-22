@@ -18,9 +18,9 @@ const App = () => {
         description:
           "Кілька слів для опису вправи, кілька слів для опису вправи",
         exerciseDescription: [
-          // { setsNumber: 4, repetitions: 8, weight: "20" },
-          // { setsNumber: 4, repetitions: 10, weight: "25" },
-          // { setsNumber: 4, repetitions: 12, weight: "30" },
+          { setsNumber: 4, repetitions: 8, weight: "20", date: "24.11" },
+          { setsNumber: 4, repetitions: 10, weight: "25", date: "22.11" },
+          { setsNumber: 4, repetitions: 12, weight: "30", date: "20.11" },
         ],
       },
       {
@@ -29,9 +29,9 @@ const App = () => {
         description:
           "Кілька слів для опису вправи, кілька слів для опису вправи",
         exerciseDescription: [
-          { setsNumber: 4, repetitions: 8, weight: "20" },
-          { setsNumber: 4, repetitions: 10, weight: "25" },
-          { setsNumber: 4, repetitions: 12, weight: "30" },
+          // { setsNumber: 4, repetitions: 8, weight: "20" },
+          // { setsNumber: 4, repetitions: 10, weight: "25" },
+          // { setsNumber: 4, repetitions: 12, weight: "30" },
         ],
       },
       {
@@ -40,9 +40,9 @@ const App = () => {
         description:
           "Кілька слів для опису вправи, кілька слів для опису вправи",
         exerciseDescription: [
-          { setsNumber: 4, repetitions: 8, weight: "20" },
-          { setsNumber: 4, repetitions: 10, weight: "25" },
-          { setsNumber: 4, repetitions: 12, weight: "30" },
+          // { setsNumber: 4, repetitions: 8, weight: "20" },
+          // { setsNumber: 4, repetitions: 10, weight: "25" },
+          // { setsNumber: 4, repetitions: 12, weight: "30" },
         ],
       },
       {
@@ -51,9 +51,9 @@ const App = () => {
         description:
           "Кілька слів для опису вправи, кілька слів для опису вправи",
         exerciseDescription: [
-          { setsNumber: 4, repetitions: 8, weight: "20" },
-          { setsNumber: 4, repetitions: 10, weight: "25" },
-          { setsNumber: 4, repetitions: 12, weight: "30" },
+          // { setsNumber: 4, repetitions: 8, weight: "20" },
+          // { setsNumber: 4, repetitions: 10, weight: "25" },
+          // { setsNumber: 4, repetitions: 12, weight: "30" },
         ],
       },
     ],
@@ -120,6 +120,68 @@ const App = () => {
     }));
   };
 
+  const handleAddExecution = ({
+    exercisesType,
+    weight,
+    approaches,
+    repetitions,
+    date,
+    id,
+  }) => {
+    // console.log(data);
+    console.log(
+      "tratata",
+      exercises[exercisesType].filter((item) => item.id === id)
+    );
+    setExercises((prevState) => ({
+      ...prevState,
+      [exercisesType]: [
+        ...prevState[exercisesType]
+          .filter((item) => item.id !== id)
+          .slice(
+            0,
+            prevState[exercisesType].findIndex((item) => item.id === id)
+          ),
+        {
+          // ...prevState[exercisesType].filter((item) => item.id === id),
+          // exerciseDescription: [
+          //   ...prevState[exercisesType][
+          //     prevState[exercisesType].findIndex((item) => item.id === id)
+          //   ].exerciseDescription,
+          //   { setsNumber: 3, repetitions: 3, weight: "3" },
+          //   // { setsNumber: 3, repetitions: 3, weight: "3" },
+          //   // { setsNumber: 3, repetitions: 3, weight: "3" },
+          // ],
+
+          id: id,
+          exerciseName: prevState[exercisesType].filter(
+            (item) => item.id === id
+          )[0].exerciseName,
+          description: prevState[exercisesType].filter(
+            (item) => item.id === id
+          )[0].description,
+          exerciseDescription: [
+            {
+              setsNumber: approaches,
+              repetitions: repetitions,
+              weight: weight,
+              date: date,
+            },
+            ...prevState[exercisesType][
+              prevState[exercisesType].findIndex((item) => item.id === id)
+            ].exerciseDescription.slice(0, 2),
+          ],
+        },
+        ...prevState[exercisesType]
+          .filter((item) => item.id !== id)
+          .slice(
+            prevState[exercisesType].findIndex((item) => item.id === id),
+            prevState[exercisesType].length
+          ),
+      ],
+    }));
+  };
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -132,6 +194,7 @@ const App = () => {
               handleCreateExercise={handleCreateExercise}
               handleDeleteExercise={handleDeleteExercise}
               handleEditExercise={handleEditExercise}
+              handleAddExecution={handleAddExecution}
             />
           }
         ></Route>
@@ -143,6 +206,7 @@ const App = () => {
               handleCreateExercise={handleCreateExercise}
               handleDeleteExercise={handleDeleteExercise}
               handleEditExercise={handleEditExercise}
+              handleAddExecution={handleAddExecution}
             />
           }
         ></Route>
@@ -154,6 +218,7 @@ const App = () => {
               handleCreateExercise={handleCreateExercise}
               handleDeleteExercise={handleDeleteExercise}
               handleEditExercise={handleEditExercise}
+              handleAddExecution={handleAddExecution}
             />
           }
         ></Route>
@@ -165,6 +230,7 @@ const App = () => {
               handleCreateExercise={handleCreateExercise}
               handleDeleteExercise={handleDeleteExercise}
               handleEditExercise={handleEditExercise}
+              handleAddExecution={handleAddExecution}
             />
           }
         ></Route>
@@ -176,6 +242,7 @@ const App = () => {
               handleCreateExercise={handleCreateExercise}
               handleDeleteExercise={handleDeleteExercise}
               handleEditExercise={handleEditExercise}
+              handleAddExecution={handleAddExecution}
             />
           }
         ></Route>
@@ -187,6 +254,7 @@ const App = () => {
               handleCreateExercise={handleCreateExercise}
               handleDeleteExercise={handleDeleteExercise}
               handleEditExercise={handleEditExercise}
+              handleAddExecution={handleAddExecution}
             />
           }
         ></Route>

@@ -7,6 +7,7 @@ const Legs = ({
   handleCreateExercise,
   handleDeleteExercise,
   handleEditExercise,
+  handleAddExecution,
 }) => {
   const onCreateExercise = (data) => {
     handleCreateExercise({
@@ -29,6 +30,14 @@ const Legs = ({
     });
   };
 
+  const onAddNewExecution = (data) => {
+    console.log(1234, data);
+    handleAddExecution({
+      exercisesType: "triceps",
+      ...data,
+    });
+  };
+
   return (
     <Set
       setType="triceps"
@@ -37,6 +46,7 @@ const Legs = ({
       onCreateExercise={onCreateExercise}
       onDeleteExercise={onDeleteExercise}
       onChangeExercise={onEditExercise}
+      onAddNewExecution={onAddNewExecution}
     />
   );
 };
