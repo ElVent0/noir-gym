@@ -130,7 +130,7 @@ export const presetOne = {
     },
     {
       id: "W_vmw2OedJ",
-      exerciseName: "4) Молотки",
+      exerciseName: "3) Молотки",
       description: "",
       exerciseDescription: [],
     },
