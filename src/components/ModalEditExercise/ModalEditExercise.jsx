@@ -9,7 +9,7 @@ import {
   Title,
 } from "./ModalEditExercise.styled";
 import { FiEdit } from "react-icons/fi";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const ModalEditExercise = ({
   onCloseModal,

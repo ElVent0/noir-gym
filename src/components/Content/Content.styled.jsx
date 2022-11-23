@@ -13,16 +13,40 @@ export const StyledContent = styled.div`
 
 export const ContentStyled = styled.div`
   width: 100%;
-  /* height: calc(100vh - 50vw); */
-  /* display: flex;
-  align-items: center; */
+  position: relative;
+  padding-top: 46vw;
+`;
+
+export const Header = styled.div`
+  position: absolute;
+  top: 14vw;
+  z-index: 1001;
 `;
 
 export const Logo = styled.img`
-  width: 40vw;
-  margin-bottom: 26vw;
-  position: relative;
-  top: 12vw;
+  /* width: 54vw;
+  position: absolute;
+  top: 16vw;
+  z-index: 1001; */
+  width: 54vw;
+  margin-bottom: 4vw;
+`;
+
+export const Title = styled.h1`
+  /* color: #f9f9f9;
+  font-weight: 200;
+  font-size: 13.6vw;
+  line-height: 90%; */
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
 `;
 
 export const MainContent = styled.div`
@@ -35,6 +59,8 @@ export const MainContent = styled.div`
     #ffffff50 30%,
     #e2e2e230 100%
   );
+  backdrop-filter: blur(2vw);
+  margin-bottom: 4vw;
 `;
 
 export const Info = styled.p`
@@ -95,4 +121,12 @@ export const Paragraph = styled.p`
 
 export const NumberOfExercises = styled.p`
   font-size: 3.4vw;
+`;
+
+export const Gif = styled.img`
+  width: 90vw;
+  position: absolute;
+  top: 0vw;
+  left: 16vw;
+  transform: scale(-1, 1);
 `;

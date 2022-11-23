@@ -5,7 +5,7 @@ import {
   ButtonModal,
   Title,
 } from "./ModalDeleteExercise.styled";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 
 const ModalDeleteExercise = ({
