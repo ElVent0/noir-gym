@@ -13,6 +13,7 @@ export const ModalBackdrop = styled.div`
   justify-content: center;
   align-items: center;
   padding: 4vw;
+  z-index: 1004;
 `;
 
 export const ModalAddExerciseStyled = styled.div`
