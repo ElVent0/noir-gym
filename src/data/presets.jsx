@@ -83,13 +83,13 @@ export const presetOne = {
       exerciseDescription: [],
     },
     {
-      id: "m1uMWcI3Mj",
+      id: "m1uMWcI3Mo",
       exerciseName: "4) Т-гриф",
       description: "",
       exerciseDescription: [],
     },
     {
-      id: "m1uMWcI3Mj",
+      id: "m1uMWcI3Mk",
       exerciseName: "4) Підняття гантель до поясу",
       description: "В нахилі спертись на лавку",
       exerciseDescription: [],

@@ -7,10 +7,18 @@ export const SetStyled = styled.div`
   /* background-color: #f9f9f9; */
   border-radius: 2vw;
   padding: 4vw;
-  background: linear-gradient(90deg, #323232 2.54%, #595959 100%);
+  /* background: linear-gradient(90deg, #323232 2.54%, #595959 100%); */
+  background: linear-gradient(
+    135deg,
+    #b7b7b72e 0%,
+    #212121a7 30%,
+    #e7e7e741 100%
+  );
   backdrop-filter: blur(6.5px);
   -webkit-backdrop-filter: blur(6.5px);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1003;
 `;
 
 export const HeaderMenu = styled.div`
@@ -73,13 +81,26 @@ export const Item = styled.li`
   /* border-bottom: 1px solid #c8c8c8; */
   /* padding: 6vw 2vw; */
   /* background: linear-gradient(180deg, #faf0ff3a 0%, #ecd7ff60 100%); */
-  background: linear-gradient(
+  /* background: linear-gradient(
     135deg,
     #e2e2e290 0%,
     #ffffff50 30%,
     #e2e2e210 70%,
     #e2e2e230 100%
+  ); */
+  background: linear-gradient(
+    -45deg,
+    #e2e2e290 0%,
+    #ffffff50 30%,
+    #e2e2e210 70%,
+    #e2e2e230 100%
   );
+  /* background: linear-gradient(
+    135deg,
+    #b7b7b72e 0%,
+    #212121a7 30%,
+    #e7e7e741 100%
+  ); */
   /* background-color: #ffffff5c; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 2vw;
@@ -204,19 +225,19 @@ export const ExerciseItem = styled.li`
 `;
 
 export const ExecutionInfo = styled.p`
-  color: #f8f8f8;
+  color: #f8f8f8bd;
   font-size: 3.6vw;
   max-width: 64vw;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 2vw;
   background: linear-gradient(
     225deg,
-    #ffffff90 0%,
-    #ffffff 60%,
-    #ffffff 70%,
-    #ffffffba 100%
+    #94949490 0%,
+    #5656562f 60%,
+    #6969691f 70%,
+    #949494b9 100%
   );
-  color: #5c5c5c;
+  /* color: #5c5c5c; */
   padding: 0 3vw;
   height: 12vw;
   display: flex;
@@ -310,6 +331,52 @@ export const InfoBlock = styled.div`
       background: linear-gradient(180deg, #d778ff 2.54%, #b66cff 100%);
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       color: #f9f9f9;
+    }
+  }
+`;
+
+export const Gradient = styled.div`
+  position: fixed;
+  z-index: 1000;
+  &:first-of-type {
+    background: radial-gradient(
+      #dd8effd6 4%,
+      #d778ff84 20%,
+      #d778ff20 50%,
+      transparent 70%
+    );
+    width: 300vw;
+    height: 300vw;
+    top: -150vw;
+    left: -150vw;
+    animation: animateRotate 10000ms infinite linear 1000ms;
+    opacity: 0.6;
+  }
+  @keyframes animateRotate {
+    0% {
+      transform: translate(0, 0);
+      /* transform: translateX(0);
+      transform: translateY(0); */
+    }
+    25% {
+      transform: translate(100vw, 0);
+      /* transform: translateX(300vw);
+      transform: translateY(0vw); */
+    }
+    50% {
+      transform: translate(100vw, 100vh);
+      /* transform: translateX(300vw);
+      transform: translateY(100vw); */
+    }
+    75% {
+      transform: translate(0, 100vh);
+      /* transform: translateX(0vw);
+      transform: translateY(100vw); */
+    }
+    100% {
+      transform: translate(0, 0);
+      /* transform: translateX(0);
+      transform: translateY(0); */
     }
   }
 `;

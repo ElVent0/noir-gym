@@ -15,6 +15,7 @@ import {
   Description,
   ButtonPlus,
   ExecutionInfo,
+  Gradient,
 } from "./Set.styled";
 import ModalAddExercise from "../ModalAddExercise/ModalAddExercise";
 import ModalDeleteExercise from "../ModalDeleteExercise/ModalDeleteExercise";
@@ -113,6 +114,7 @@ const Set = ({
 
   return (
     <>
+      <Gradient></Gradient>
       <SetStyled>
         <HeaderMenu>
           <Link to="/">

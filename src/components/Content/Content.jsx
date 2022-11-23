@@ -12,16 +12,30 @@ import {
   NumberOfExercises,
   Info,
   Gif,
+  Gradient,
 } from "./Content.styled";
 import LogoLight from "../../media/logo-light.png";
 // import { gym } from "../../media";
 // import LogoDark from "../../media/logo-dark.png";
 
-const Content = () => {
+const Content = ({ exercises }) => {
+  const numbersOfExercises = {
+    back: exercises.back.length,
+    biceps: exercises.biceps.length,
+    chest: exercises.chest.length,
+    legs: exercises.legs.length,
+    shoulders: exercises.shoulders.length,
+    triceps: exercises.triceps.length,
+  };
+
+  console.log(numbersOfExercises);
+
   return (
     <StyledContent>
       <Header>
         <Logo src={LogoLight}></Logo>
+        <Gradient></Gradient>
+        <Gradient></Gradient>
         <Title>Записник для тренажерного залу</Title>
       </Header>
       <Gif src={require("../../media/gym.gif")} alt="" />
@@ -32,37 +46,49 @@ const Content = () => {
             <Item>
               <Link to="/legs">
                 <Paragraph>Ноги</Paragraph>
-                <NumberOfExercises>7 вправ</NumberOfExercises>
+                <NumberOfExercises>
+                  Вправ: {numbersOfExercises.legs}
+                </NumberOfExercises>
               </Link>
             </Item>
             <Item>
               <Link to="/shoulders">
                 <Paragraph>Плечі</Paragraph>
-                <NumberOfExercises>7 вправ</NumberOfExercises>
+                <NumberOfExercises>
+                  Вправ: {numbersOfExercises.shoulders}
+                </NumberOfExercises>
               </Link>
             </Item>
             <Item>
               <Link to="/back">
                 <Paragraph>Спина</Paragraph>
-                <NumberOfExercises>7 вправ</NumberOfExercises>
+                <NumberOfExercises>
+                  Вправ: {numbersOfExercises.back}
+                </NumberOfExercises>
               </Link>
             </Item>
             <Item>
               <Link to="/triceps">
                 <Paragraph>Трицепс</Paragraph>
-                <NumberOfExercises>7 вправ</NumberOfExercises>
+                <NumberOfExercises>
+                  Вправ: {numbersOfExercises.triceps}
+                </NumberOfExercises>
               </Link>
             </Item>
             <Item>
               <Link to="/biceps">
                 <Paragraph>Біцепс</Paragraph>
-                <NumberOfExercises>7 вправ</NumberOfExercises>
+                <NumberOfExercises>
+                  Вправ: {numbersOfExercises.biceps}
+                </NumberOfExercises>
               </Link>
             </Item>
             <Item>
               <Link to="/chest">
                 <Paragraph>Груди</Paragraph>
-                <NumberOfExercises>7 вправ</NumberOfExercises>
+                <NumberOfExercises>
+                  Вправ: {numbersOfExercises.chest}
+                </NumberOfExercises>
               </Link>
             </Item>
           </List>
