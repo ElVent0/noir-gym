@@ -4,8 +4,8 @@ import imageFive from "../../media/legs.png";
 import imageFour from "../../media/shoulders.png";
 import imageSix from "../../media/back.png";
 import imageTwo from "../../media/triceps.png";
-import imageThree from "../../media/biceps.png";
-import imageOne from "../../media/chest.png";
+import imageOne from "../../media/biceps.png";
+import imageThree from "../../media/chest.png";
 
 export const StyledContent = styled.div`
   position: relative;
@@ -345,15 +345,15 @@ export const Gradient = styled.div`
   }
   @keyframes animateSize {
     0% {
-      transform: scale(1);
+      transform: scale(2);
     }
 
     50% {
-      transform: scale(3);
+      transform: scale(4);
     }
 
     100% {
-      transform: scale(1);
+      transform: scale(2);
     }
   }
 `;

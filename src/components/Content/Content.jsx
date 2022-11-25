@@ -129,18 +129,18 @@ const Content = ({ exercises }) => {
               </Link>
             </Item>
             <Item>
-              <Link to="/biceps">
-                <Paragraph>Біцепс</Paragraph>
-                <NumberOfExercises>
-                  Вправ: {numbersOfExercises.biceps}
-                </NumberOfExercises>
-              </Link>
-            </Item>
-            <Item>
               <Link to="/chest">
                 <Paragraph>Груди</Paragraph>
                 <NumberOfExercises>
                   Вправ: {numbersOfExercises.chest}
+                </NumberOfExercises>
+              </Link>
+            </Item>
+            <Item>
+              <Link to="/biceps">
+                <Paragraph>Біцепс</Paragraph>
+                <NumberOfExercises>
+                  Вправ: {numbersOfExercises.biceps}
                 </NumberOfExercises>
               </Link>
             </Item>
