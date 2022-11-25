@@ -4,10 +4,8 @@ import { NavLink } from "react-router-dom";
 export const SetStyled = styled.div`
   width: 100%;
   min-height: 95.5vh;
-  /* background-color: #f9f9f9; */
   border-radius: 2vw;
   padding: 4vw;
-  /* background: linear-gradient(90deg, #323232 2.54%, #595959 100%); */
   background: linear-gradient(
     135deg,
     #b7b7b72e 0%,
@@ -30,7 +28,6 @@ export const HeaderMenu = styled.div`
 
 export const Link = styled(NavLink)`
   color: #f9f9f9;
-  /* background-color: #ad00ff; */
   text-align: center;
   border-radius: 2vw;
   width: 14vw;
@@ -58,9 +55,6 @@ export const ButtonAdd = styled.button`
   align-items: center;
   border-radius: 2vw;
   cursor: pointer;
-  /* align-items: center; */
-  /* background: linear-gradient(180deg, #ad00ff 2.54%, #8000ff 100%); */
-  /* padding: 6vw 4vw; */
   border: none;
   transition: all 0.3s;
   &:hover,
@@ -78,16 +72,6 @@ export const ButtonAdd = styled.button`
 export const List = styled.ul``;
 
 export const Item = styled.li`
-  /* border-bottom: 1px solid #c8c8c8; */
-  /* padding: 6vw 2vw; */
-  /* background: linear-gradient(180deg, #faf0ff3a 0%, #ecd7ff60 100%); */
-  /* background: linear-gradient(
-    135deg,
-    #e2e2e290 0%,
-    #ffffff50 30%,
-    #e2e2e210 70%,
-    #e2e2e230 100%
-  ); */
   background: linear-gradient(
     -45deg,
     #e2e2e290 0%,
@@ -95,20 +79,10 @@ export const Item = styled.li`
     #e2e2e210 70%,
     #e2e2e230 100%
   );
-  /* background: linear-gradient(
-    135deg,
-    #b7b7b72e 0%,
-    #212121a7 30%,
-    #e7e7e741 100%
-  ); */
-  /* background-color: #ffffff5c; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 2vw;
   padding: 6vw 3vw 3vw 3vw;
   margin-bottom: 6vw;
-  /* &:last-child {
-    border-bottom: none;
-  } */
   &:last-child {
     margin-bottom: 0;
   }
@@ -146,7 +120,7 @@ export const ButtonDelete = styled.button`
   background-color: #f9f9f9;
   font-size: 5vw;
   /* color: #f57878; */
-  color: #9d3bff;
+  color: #8000ff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -167,18 +141,11 @@ export const ButtonDelete = styled.button`
       position: relative;
       left: 0.2vw;
     }
-    /* color: #f9f9f9;
-    background-color: transparent;
-    &:hover,
-    &:focus {
-      color: #dedede;
-    } */
   }
 `;
 
 export const ExerciseList = styled.ul`
   display: flex;
-  /* justify-content: space-between; */
   align-items: flex-end;
   gap: 2vw;
 `;
@@ -196,9 +163,7 @@ export const ExerciseItem = styled.li`
   color: #5c5c5c;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   align-items: baseline;
-  /* background-color: #f9f9f9; */
   &:nth-child(1) {
     width: 21vw;
     height: 24vw;
@@ -225,7 +190,7 @@ export const ExerciseItem = styled.li`
 `;
 
 export const ExecutionInfo = styled.p`
-  color: #f8f8f8bd;
+  color: #f9f9f9bd;
   font-size: 3.6vw;
   max-width: 64vw;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -237,7 +202,6 @@ export const ExecutionInfo = styled.p`
     #6969691f 70%,
     #949494b9 100%
   );
-  /* color: #5c5c5c; */
   padding: 0 3vw;
   height: 12vw;
   display: flex;
@@ -256,7 +220,7 @@ export const ButtonPlus = styled.button`
   align-items: center;
   cursor: pointer;
   color: #f9f9f9;
-  background: linear-gradient(180deg, #c53dff 2.54%, #9d3bff 100%);
+  background: linear-gradient(180deg, #c53dff 2.54%, #8000ff 100%);
   border-radius: 2vw;
   transition: all 0.3s;
   &:hover,
@@ -268,33 +232,26 @@ export const ButtonPlus = styled.button`
 
 export const Paragraph = styled.p`
   &:nth-child(1) {
-    /* font-size: 3.4vw; */
     margin-bottom: auto;
     opacity: 0.6;
   }
   &:nth-child(2) {
-    /* font-size: 3.4vw; */
-    /* margin-bottom: 0.4vw; */
     & > span {
       font-size: 4.8vw;
     }
   }
   &:nth-child(3) {
-    /* font-size: 3vw; */
     & > span {
       font-size: 4vw;
     }
   }
   & > span {
     font-weight: 600;
-    /* color: #8e5ac2; */
   }
 `;
 
 export const InfoBlock = styled.div`
   width: 60vw;
-  /* display: flex;
-  justify-content: center; */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -316,7 +273,7 @@ export const InfoBlock = styled.div`
     margin-top: 8vw;
     margin-left: auto;
     margin-right: auto;
-    background: linear-gradient(180deg, #c53dff 2.54%, #9d3bff 100%);
+    background: linear-gradient(180deg, #c53dff 2.54%, #8000ff 100%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     color: #f9f9f9;
     border-radius: 2vw;
@@ -355,28 +312,18 @@ export const Gradient = styled.div`
   @keyframes animateRotate {
     0% {
       transform: translate(0, 0);
-      /* transform: translateX(0);
-      transform: translateY(0); */
     }
     25% {
       transform: translate(100vw, 0);
-      /* transform: translateX(300vw);
-      transform: translateY(0vw); */
     }
     50% {
       transform: translate(100vw, 100vh);
-      /* transform: translateX(300vw);
-      transform: translateY(100vw); */
     }
     75% {
       transform: translate(0, 100vh);
-      /* transform: translateX(0vw);
-      transform: translateY(100vw); */
     }
     100% {
       transform: translate(0, 0);
-      /* transform: translateX(0);
-      transform: translateY(0); */
     }
   }
 `;

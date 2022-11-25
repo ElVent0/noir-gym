@@ -21,7 +21,6 @@ export const ModalAddExerciseStyled = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 2vw;
   padding: 12vw 4vw 6vw 4vw;
-  /* height: 100%; */
   background: linear-gradient(135deg, #e2e2e2 0%, #ffffff 30%, #e2e2e2 100%);
   & > svg {
     display: block;
@@ -79,9 +78,7 @@ export const ButtonModal = styled.button`
   }
 `;
 
-export const AddExerciseForm = styled.form`
-  /* display: flex; */
-`;
+export const AddExerciseForm = styled.form``;
 
 export const AddExerciseInput = styled.input`
   display: block;
@@ -91,9 +88,7 @@ export const AddExerciseInput = styled.input`
   background-color: transparent;
   border: 0.4vw solid #5c5c5c60;
   border-radius: 2vw;
-  /* border-bottom: 1px solid #5c5c5c; */
   width: 68vw;
-  /* height: 8vw; */
   font-size: 4.4vw;
   color: #5c5c5c;
   padding: 2vw 4vw;

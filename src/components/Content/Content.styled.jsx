@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import imageOne from "../../media/legs.png";
-import imageTwo from "../../media/shoulders.png";
-import imageThree from "../../media/back.png";
-import imageFour from "../../media/triceps.png";
-import imageFive from "../../media/biceps.png";
-import imageSix from "../../media/chest.png";
+import imageFive from "../../media/legs.png";
+import imageFour from "../../media/shoulders.png";
+import imageSix from "../../media/back.png";
+import imageTwo from "../../media/triceps.png";
+import imageThree from "../../media/biceps.png";
+import imageOne from "../../media/chest.png";
 
 export const StyledContent = styled.div`
   position: relative;
@@ -33,10 +33,6 @@ export const Logo = styled.img`
 `;
 
 export const Title = styled.h1`
-  /* color: #f9f9f9;
-  font-weight: 200;
-  font-size: 13.6vw;
-  line-height: 90%; */
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -49,10 +45,63 @@ export const Title = styled.h1`
   margin: -1px;
 `;
 
+export const Calendar = styled.div`
+  border-radius: 2vw;
+  padding: 6vw 4vw 4vw 4vw;
+  background: linear-gradient(
+    135deg,
+    #b7b7b72e 0%,
+    #212121a7 30%,
+    #e7e7e741 100%
+  );
+  backdrop-filter: blur(2vw);
+  margin-bottom: 4vw;
+  position: relative;
+  z-index: 1002;
+`;
+
+export const CalendarTitle = styled.h2`
+  font-size: 7.6vw;
+  font-weight: 900;
+  letter-spacing: 0.2vw;
+  margin-bottom: 2vw;
+  color: #f9f9f9;
+`;
+
+export const CalendarParagraph = styled.p`
+  font-size: 5.4vw;
+  font-weight: 100;
+  letter-spacing: 0.2vw;
+  margin-bottom: 2vw;
+  color: #f9f9f9;
+`;
+
+export const CalendarInfo = styled.p`
+  font-size: 3.6vw;
+  font-weight: 100;
+  letter-spacing: 0.2vw;
+  margin-bottom: 2vw;
+  color: #f9f9f9af;
+`;
+
+export const CalendarSpan = styled.span`
+  font-size: 3.4vw;
+  font-weight: 100;
+  letter-spacing: 0.2vw;
+  margin-bottom: 6vw;
+  color: #5c5c5c;
+  background-color: #f9f9f9;
+  border-radius: 1vw;
+  padding: 0.8vw 1.4vw;
+  margin-right: 2vw;
+  &:last-child {
+    margin-right: 0;
+  }
+`;
+
 export const MainContent = styled.div`
   border-radius: 2vw;
   padding: 8vw 4vw 4vw 4vw;
-  /* background: linear-gradient(90deg, #323232 2.54%, #595959 100%); */
   background: linear-gradient(
     135deg,
     #b7b7b72e 0%,
@@ -70,7 +119,7 @@ export const Info = styled.p`
   font-weight: 100;
   letter-spacing: 0.2vw;
   margin-bottom: 6vw;
-  color: #f8f8f8;
+  color: #f9f9f9;
 `;
 
 export const List = styled.ul`
@@ -83,11 +132,23 @@ export const List = styled.ul`
 export const Item = styled.li`
   width: 44%;
   flex-grow: 1;
-  /* background-color: #ffffffc5; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 2vw;
   background-size: contain;
   background-repeat: no-repeat;
+  transition: 0.3s;
+  &:nth-child(2n + 1) {
+    background-position: right;
+    & > a {
+      padding: 4vw 19vw 2vw 4vw;
+    }
+  }
+  &:nth-child(2n) {
+    background-position: left;
+    & > a {
+      padding: 4vw 4vw 2vw 19vw;
+    }
+  }
   &:nth-child(1) {
     background-image: url(${imageFive}),
       linear-gradient(
@@ -97,11 +158,6 @@ export const Item = styled.li`
         #e2e2e210 70%,
         #e2e2e230 100%
       );
-    background-position: right;
-    & > a {
-      padding: 4vw 19vw 2vw 4vw;
-    }
-    transition: 0.3s;
     &:hover,
     &:focus {
       background-image: url(${imageFive}),
@@ -123,11 +179,6 @@ export const Item = styled.li`
         #e2e2e210 70%,
         #e2e2e230 100%
       );
-    background-position: left;
-    & > a {
-      padding: 4vw 4vw 2vw 19vw;
-    }
-    transition: 0.3s;
     &:hover,
     &:focus {
       background-image: url(${imageFour}),
@@ -150,11 +201,6 @@ export const Item = styled.li`
         #e2e2e210 70%,
         #e2e2e230 100%
       );
-    background-position: right;
-    & > a {
-      padding: 4vw 19vw 2vw 4vw;
-    }
-    transition: 0.3s;
     &:hover,
     &:focus {
       background-image: url(${imageSix}),
@@ -176,11 +222,6 @@ export const Item = styled.li`
         #e2e2e210 70%,
         #e2e2e230 100%
       );
-    background-position: left;
-    & > a {
-      padding: 4vw 4vw 2vw 19vw;
-    }
-    transition: 0.3s;
     &:hover,
     &:focus {
       background-image: url(${imageTwo}),
@@ -203,11 +244,6 @@ export const Item = styled.li`
         #e2e2e210 70%,
         #e2e2e230 100%
       );
-    background-position: right;
-    & > a {
-      padding: 4vw 19vw 2vw 4vw;
-    }
-    transition: 0.3s;
     &:hover,
     &:focus {
       background-image: url(${imageThree}),
@@ -229,11 +265,6 @@ export const Item = styled.li`
         #e2e2e210 70%,
         #e2e2e230 100%
       );
-    background-position: left;
-    & > a {
-      padding: 4vw 4vw 2vw 19vw;
-    }
-    transition: 0.3s;
     &:hover,
     &:focus {
       background-image: url(${imageOne}),
@@ -257,7 +288,6 @@ export const Link = styled(NavLink)`
 export const Paragraph = styled.p`
   font-size: 4.8vw;
   font-weight: 600;
-  /* margin-bottom: 1vw; */
 `;
 
 export const NumberOfExercises = styled.p`
@@ -296,9 +326,9 @@ export const Gradient = styled.div`
     );
     width: 200vw;
     height: 200vw;
-    top: 40vw;
+    top: 80vw;
     left: -100vw;
-    animation: animateDown 10000ms infinite 4000ms linear;
+    animation: animateSize 5000ms infinite 4000ms linear;
   }
   @keyframes animateTop {
     0% {
@@ -313,17 +343,17 @@ export const Gradient = styled.div`
       transform: translateX(0px);
     }
   }
-  @keyframes animateDown {
+  @keyframes animateSize {
     0% {
-      transform: translate(0, 0);
+      transform: scale(1);
     }
 
     50% {
-      transform: translate(50vw, 50vw);
+      transform: scale(3);
     }
 
     100% {
-      transform: translate(0, 0);
+      transform: scale(1);
     }
   }
 `;

@@ -21,7 +21,6 @@ export const ModalAddExerciseStyled = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 2vw;
   padding: 12vw 4vw 6vw 4vw;
-  /* height: 100%; */
   background: linear-gradient(135deg, #e2e2e2 0%, #ffffff 30%, #e2e2e2 100%);
   & > svg {
     display: block;
