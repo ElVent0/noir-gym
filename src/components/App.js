@@ -96,7 +96,6 @@ const App = () => {
     date,
     id,
   }) => {
-    // console.log(data);
     console.log(
       "tratata",
       exercises[exercisesType].filter((item) => item.id === id)
@@ -111,16 +110,6 @@ const App = () => {
             prevState[exercisesType].findIndex((item) => item.id === id)
           ),
         {
-          // ...prevState[exercisesType].filter((item) => item.id === id),
-          // exerciseDescription: [
-          //   ...prevState[exercisesType][
-          //     prevState[exercisesType].findIndex((item) => item.id === id)
-          //   ].exerciseDescription,
-          //   { setsNumber: 3, repetitions: 3, weight: "3" },
-          //   // { setsNumber: 3, repetitions: 3, weight: "3" },
-          //   // { setsNumber: 3, repetitions: 3, weight: "3" },
-          // ],
-
           id: id,
           exerciseName: prevState[exercisesType].filter(
             (item) => item.id === id

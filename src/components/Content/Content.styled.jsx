@@ -297,7 +297,7 @@ export const NumberOfExercises = styled.p`
 export const Gif = styled.img`
   width: 90vw;
   position: absolute;
-  top: 0vw;
+  top: -14vw;
   left: 16vw;
   transform: scale(-1, 1);
 `;

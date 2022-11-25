@@ -75,79 +75,83 @@ const Content = ({ exercises }) => {
   };
 
   return (
-    <StyledContent>
-      <Header>
-        <Logo src={LogoLight}></Logo>
-        <Gradient></Gradient>
-        <Gradient></Gradient>
-        <Title>Записник для тренажерного залу</Title>
-      </Header>
-      <Gif src={require("../../media/gym.gif")} alt="" />
-      <ContentStyled>
-        <Calendar>
-          <CalendarTitle>{DayOfToday().day}</CalendarTitle>
-          <CalendarParagraph>План на сьогодні:</CalendarParagraph>
-          {DayOfToday().plan === 0 ? (
-            <CalendarInfo>На сьогодні планів немає</CalendarInfo>
-          ) : (
-            DayOfToday().plan.map((item) => <CalendarSpan>{item}</CalendarSpan>)
-          )}
-        </Calendar>
-        <MainContent>
-          <Info>Що плануєш робити сьогодні?</Info>
-          <List>
-            <Item>
-              <Link to="/legs">
-                <Paragraph>Ноги</Paragraph>
-                <NumberOfExercises>
-                  Вправ: {numbersOfExercises.legs}
-                </NumberOfExercises>
-              </Link>
-            </Item>
-            <Item>
-              <Link to="/shoulders">
-                <Paragraph>Плечі</Paragraph>
-                <NumberOfExercises>
-                  Вправ: {numbersOfExercises.shoulders}
-                </NumberOfExercises>
-              </Link>
-            </Item>
-            <Item>
-              <Link to="/back">
-                <Paragraph>Спина</Paragraph>
-                <NumberOfExercises>
-                  Вправ: {numbersOfExercises.back}
-                </NumberOfExercises>
-              </Link>
-            </Item>
-            <Item>
-              <Link to="/triceps">
-                <Paragraph>Трицепс</Paragraph>
-                <NumberOfExercises>
-                  Вправ: {numbersOfExercises.triceps}
-                </NumberOfExercises>
-              </Link>
-            </Item>
-            <Item>
-              <Link to="/chest">
-                <Paragraph>Груди</Paragraph>
-                <NumberOfExercises>
-                  Вправ: {numbersOfExercises.chest}
-                </NumberOfExercises>
-              </Link>
-            </Item>
-            <Item>
-              <Link to="/biceps">
-                <Paragraph>Біцепс</Paragraph>
-                <NumberOfExercises>
-                  Вправ: {numbersOfExercises.biceps}
-                </NumberOfExercises>
-              </Link>
-            </Item>
-          </List>
-        </MainContent>
-      </ContentStyled>
-    </StyledContent>
+    <>
+      <StyledContent>
+        <Header>
+          <Logo src={LogoLight}></Logo>
+          <Gradient></Gradient>
+          <Gradient></Gradient>
+          <Title>Записник для тренажерного залу</Title>
+          <Gif src={require("../../media/gym.gif")} alt="" />
+        </Header>
+        <ContentStyled>
+          <Calendar>
+            <CalendarTitle>{DayOfToday().day}</CalendarTitle>
+            <CalendarParagraph>План на сьогодні:</CalendarParagraph>
+            {DayOfToday().plan === 0 ? (
+              <CalendarInfo>На сьогодні планів немає</CalendarInfo>
+            ) : (
+              DayOfToday().plan.map((item) => (
+                <CalendarSpan>{item}</CalendarSpan>
+              ))
+            )}
+          </Calendar>
+          <MainContent>
+            <Info>Що плануєш робити сьогодні?</Info>
+            <List>
+              <Item>
+                <Link to="/legs">
+                  <Paragraph>Ноги</Paragraph>
+                  <NumberOfExercises>
+                    Вправ: {numbersOfExercises.legs}
+                  </NumberOfExercises>
+                </Link>
+              </Item>
+              <Item>
+                <Link to="/shoulders">
+                  <Paragraph>Плечі</Paragraph>
+                  <NumberOfExercises>
+                    Вправ: {numbersOfExercises.shoulders}
+                  </NumberOfExercises>
+                </Link>
+              </Item>
+              <Item>
+                <Link to="/back">
+                  <Paragraph>Спина</Paragraph>
+                  <NumberOfExercises>
+                    Вправ: {numbersOfExercises.back}
+                  </NumberOfExercises>
+                </Link>
+              </Item>
+              <Item>
+                <Link to="/triceps">
+                  <Paragraph>Трицепс</Paragraph>
+                  <NumberOfExercises>
+                    Вправ: {numbersOfExercises.triceps}
+                  </NumberOfExercises>
+                </Link>
+              </Item>
+              <Item>
+                <Link to="/chest">
+                  <Paragraph>Груди</Paragraph>
+                  <NumberOfExercises>
+                    Вправ: {numbersOfExercises.chest}
+                  </NumberOfExercises>
+                </Link>
+              </Item>
+              <Item>
+                <Link to="/biceps">
+                  <Paragraph>Біцепс</Paragraph>
+                  <NumberOfExercises>
+                    Вправ: {numbersOfExercises.biceps}
+                  </NumberOfExercises>
+                </Link>
+              </Item>
+            </List>
+          </MainContent>
+        </ContentStyled>
+      </StyledContent>
+    </>
   );
 };
 
