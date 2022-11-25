@@ -12,9 +12,9 @@ import {
 } from "./ModalAddExecution.styled";
 import { FaDumbbell } from "react-icons/fa";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
-const ModalAddExercise = ({ onCloseModal, onAddExecutionToState, id }) => {
-  // console.log("id", id);
+const ModalAddExecusion = ({ onCloseModal, onAddExecutionToState, id }) => {
   const [executionData, setExecutionData] = useState({
     weight: null,
     approaches: null,
@@ -32,7 +32,6 @@ const ModalAddExercise = ({ onCloseModal, onAddExecutionToState, id }) => {
       executionData.approaches !== null &&
       executionData.repetitions !== null
     ) {
-      // console.log(executionData);
       onAddExecutionToState({ ...executionData, date: dateOfToday });
     } else {
       alert("Недостатньо введених даних");
@@ -50,21 +49,18 @@ const ModalAddExercise = ({ onCloseModal, onAddExecutionToState, id }) => {
     setExecutionData((prevState) => {
       return { ...prevState, weight: Number(e.target.name) };
     });
-    // console.log(executionData);
   };
 
   const onUpdateApproaches = (e) => {
     setExecutionData((prevState) => {
       return { ...prevState, approaches: Number(e.target.name) };
     });
-    // console.log(executionData);
   };
 
   const onUpdateRepetitions = (e) => {
     setExecutionData((prevState) => {
       return { ...prevState, repetitions: Number(e.target.name) };
     });
-    // console.log(executionData);
   };
 
   const handleCloseModal = () => {
@@ -192,4 +188,10 @@ const ModalAddExercise = ({ onCloseModal, onAddExecutionToState, id }) => {
   );
 };
 
-export default ModalAddExercise;
+export default ModalAddExecusion;
+
+ModalAddExecusion.propTypes = {
+  onCloseModal: PropTypes.func,
+  onAddExecutionToState: PropTypes.func,
+  id: PropTypes.string,
+};

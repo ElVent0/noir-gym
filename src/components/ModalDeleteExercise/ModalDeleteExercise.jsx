@@ -5,8 +5,8 @@ import {
   ButtonModal,
   Title,
 } from "./ModalDeleteExercise.styled";
-// import { useState, useEffect } from "react";
 import { RiDeleteBin5Fill } from "react-icons/ri";
+import PropTypes from "prop-types";
 
 const ModalDeleteExercise = ({
   onCloseModal,
@@ -43,3 +43,10 @@ const ModalDeleteExercise = ({
 };
 
 export default ModalDeleteExercise;
+
+ModalDeleteExercise.propTypes = {
+  onCloseModal: PropTypes.func,
+  onDelExerciseFromState: PropTypes.func,
+  id: PropTypes.string,
+  name: PropTypes.string,
+};

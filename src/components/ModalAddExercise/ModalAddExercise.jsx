@@ -11,6 +11,7 @@ import {
 import { GiWeightLiftingUp } from "react-icons/gi";
 import { useState } from "react";
 import { nanoid } from "nanoid";
+import PropTypes from "prop-types";
 
 const ModalAddExercise = ({ onCloseModal, onAddExerciseToState }) => {
   const [name, setName] = useState("");
@@ -73,3 +74,8 @@ const ModalAddExercise = ({ onCloseModal, onAddExerciseToState }) => {
 };
 
 export default ModalAddExercise;
+
+ModalAddExercise.propTypes = {
+  onCloseModal: PropTypes.func,
+  onAddExerciseToState: PropTypes.func,
+};

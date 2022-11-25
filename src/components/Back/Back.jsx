@@ -1,7 +1,7 @@
-// import { NavLink } from "react-router-dom";
 import Set from "../Set/Set";
+import PropTypes from "prop-types";
 
-const Legs = ({
+const Back = ({
   exercises,
   onOpenModalAddExercise,
   handleCreateExercise,
@@ -51,4 +51,13 @@ const Legs = ({
   );
 };
 
-export default Legs;
+export default Back;
+
+Back.propTypes = {
+  exercises: PropTypes.array,
+  onOpenModalAddExercise: PropTypes.func,
+  handleCreateExercise: PropTypes.func,
+  handleDeleteExercise: PropTypes.func,
+  handleEditExercise: PropTypes.func,
+  handleAddExecution: PropTypes.func,
+};

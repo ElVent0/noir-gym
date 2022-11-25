@@ -10,6 +10,7 @@ import {
 } from "./ModalEditExercise.styled";
 import { FiEdit } from "react-icons/fi";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const ModalEditExercise = ({
   onCloseModal,
@@ -77,3 +78,11 @@ const ModalEditExercise = ({
 };
 
 export default ModalEditExercise;
+
+ModalEditExercise.propTypes = {
+  onCloseModal: PropTypes.func,
+  onEditExerciseInState: PropTypes.func,
+  name: PropTypes.func,
+  description: PropTypes.func,
+  id: PropTypes.func,
+};

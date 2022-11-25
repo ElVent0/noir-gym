@@ -86,7 +86,6 @@ const Set = ({
   };
 
   const onAddExecution = (id) => {
-    // console.log(id);
     setOpenModal((prevState) => {
       return { ...prevState, status: "execution", id };
     });

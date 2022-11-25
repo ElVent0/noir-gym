@@ -20,10 +20,10 @@ import {
   CalendarSpan,
 } from "./Content.styled";
 import LogoLight from "../../media/logo-light.png";
-// import { gym } from "../../media";
-// import LogoDark from "../../media/logo-dark.png";
+import PropTypes from "prop-types";
 
 const Content = ({ exercises }) => {
+  console.log(exercises);
   const numbersOfExercises = {
     back: exercises.back.length,
     biceps: exercises.biceps.length,
@@ -156,3 +156,7 @@ const Content = ({ exercises }) => {
 };
 
 export default Content;
+
+Content.propTypes = {
+  exercises: PropTypes.object,
+};
