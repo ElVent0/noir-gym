@@ -1,14 +1,16 @@
-import Content from "./Content/Content";
-import Legs from "./Legs/Legs";
-import Shoulders from "./Shoulders/Shoulders";
-import Back from "./Back/Back";
-import Triceps from "./Triceps/Triceps";
-import Biceps from "./Biceps/Biceps";
-import Chest from "./Chest/Chest";
 import Layout from "./Layout/Layout";
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { presetOne } from "../data/presets";
+import { lazy } from "react";
+
+const Content = lazy(() => import("./Content/Content"));
+const Legs = lazy(() => import("./Legs/Legs"));
+const Shoulders = lazy(() => import("./Shoulders/Shoulders"));
+const Back = lazy(() => import("./Back/Back"));
+const Triceps = lazy(() => import("./Triceps/Triceps"));
+const Biceps = lazy(() => import("./Biceps/Biceps"));
+const Chest = lazy(() => import("./Chest/Chest"));
 
 const App = () => {
   const parsetData = () => {
@@ -221,3 +223,6 @@ const App = () => {
 };
 
 export default App;
+
+// Модалка для календаря
+// Медіа запити
