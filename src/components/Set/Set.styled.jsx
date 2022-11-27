@@ -295,20 +295,19 @@ export const InfoBlock = styled.div`
 export const Gradient = styled.div`
   position: fixed;
   z-index: 1000;
-  &:first-of-type {
-    background: radial-gradient(
-      #dd8effd6 4%,
-      #d778ff84 20%,
-      #d778ff20 50%,
-      transparent 70%
-    );
-    width: 300vw;
-    height: 300vw;
-    top: -150vw;
-    left: -150vw;
-    animation: animateRotate 10000ms infinite linear 1000ms;
-    opacity: 0.6;
-  }
+  background: radial-gradient(
+    #dd8effd6 4%,
+    #d778ff84 20%,
+    #d778ff20 50%,
+    transparent 70%
+  );
+  width: 300vw;
+  height: 300vw;
+  top: -150vw;
+  left: -150vw;
+  animation: animateRotate 10000ms infinite linear 1000ms;
+  opacity: 0.6;
+
   @keyframes animateRotate {
     0% {
       transform: translate(0, 0);

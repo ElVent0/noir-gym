@@ -82,7 +82,7 @@ export default ModalEditExercise;
 ModalEditExercise.propTypes = {
   onCloseModal: PropTypes.func,
   onEditExerciseInState: PropTypes.func,
-  name: PropTypes.func,
-  description: PropTypes.func,
-  id: PropTypes.func,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  id: PropTypes.string,
 };
