@@ -17,10 +17,10 @@ import {
   ExecutionInfo,
   Gradient,
 } from "./Set.styled";
-import ModalAddExercise from "../ModalAddExercise/ModalAddExercise";
-import ModalDeleteExercise from "../ModalDeleteExercise/ModalDeleteExercise";
-import ModalEditExercise from "../ModalEditExercise/ModalEditExercise";
-import ModalAddExecution from "../ModalAddExecution/ModalAddExecution";
+import ModalAddExercise from "../../components/ModalAddExercise/ModalAddExercise";
+import ModalDeleteExercise from "../../components/ModalDeleteExercise/ModalDeleteExercise";
+import ModalEditExercise from "../../components/ModalEditExercise/ModalEditExercise";
+import ModalAddExecution from "../../components/ModalAddExecution/ModalAddExecution";
 import { BsArrowLeftShort } from "react-icons/bs";
 import { AiFillFileAdd } from "react-icons/ai";
 import { FiEdit } from "react-icons/fi";
@@ -28,13 +28,15 @@ import { BsPlusLg } from "react-icons/bs";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { ImFileEmpty } from "react-icons/im";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const Set = ({
+  setType,
   exercises,
-  onCreateExercise,
-  onAddNewExecution,
-  onDeleteExercise,
-  onChangeExercise,
+  handleCreateExercise,
+  handleDeleteExercise,
+  handleEditExercise,
+  handleAddExecution,
 }) => {
   const [openModal, setOpenModal] = useState({
     status: null,
@@ -81,7 +83,13 @@ const Set = ({
 
   const onEditExercise = (name, description, id) => {
     setOpenModal((prevState) => {
-      return { ...prevState, status: "edit", name, description, id };
+      return {
+        ...prevState,
+        status: "edit",
+        name,
+        description,
+        id,
+      };
     });
   };
 
@@ -92,22 +100,22 @@ const Set = ({
   };
 
   const onAddExerciseToState = (data) => {
-    onCreateExercise(data);
+    handleCreateExercise({ exercisesType: setType, ...data });
     onCloseModal();
   };
 
   const onAddExecutionToState = (data) => {
-    onAddNewExecution(data);
+    handleAddExecution({ exercisesType: setType, ...data });
     onCloseModal();
   };
 
   const onDelExerciseFromState = (id) => {
-    onDeleteExercise(id);
+    handleDeleteExercise({ exercisesType: setType, id });
     onCloseModal();
   };
 
   const onEditExerciseInState = (data) => {
-    onChangeExercise(data);
+    handleEditExercise({ exercisesType: setType, ...data });
     onCloseModal();
   };
 
@@ -299,3 +307,12 @@ const Set = ({
 };
 
 export default Set;
+
+Set.propTypes = {
+  exercises: PropTypes.array,
+  onOpenModalAddExercise: PropTypes.func,
+  handleCreateExercise: PropTypes.func,
+  handleDeleteExercise: PropTypes.func,
+  handleEditExercise: PropTypes.func,
+  handleAddExecution: PropTypes.func,
+};

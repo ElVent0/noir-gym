@@ -19,8 +19,8 @@ const ModalEditExercise = ({
   description: descriptionOfExercise,
   id,
 }) => {
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
+  const [name, setName] = useState(nameOfExercise);
+  const [description, setDescription] = useState(descriptionOfExercise);
 
   const onChangeInput = (e) => {
     if (e.target.name === "name") {

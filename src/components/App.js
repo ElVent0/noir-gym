@@ -3,14 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { presetOne } from "../data/presets";
 import { lazy } from "react";
+import Set from "../pages/Set/Set";
 
-const Content = lazy(() => import("./Content/Content"));
-const Legs = lazy(() => import("./Legs/Legs"));
-const Shoulders = lazy(() => import("./Shoulders/Shoulders"));
-const Back = lazy(() => import("./Back/Back"));
-const Triceps = lazy(() => import("./Triceps/Triceps"));
-const Biceps = lazy(() => import("./Biceps/Biceps"));
-const Chest = lazy(() => import("./Chest/Chest"));
+const Content = lazy(() => import("../pages/Content/Content"));
 
 const App = () => {
   const parsetData = () => {
@@ -141,82 +136,37 @@ const App = () => {
     }));
   };
 
+  const parts = [
+    { name: "legs", path: "/legs", componentName: "Legs" },
+    { name: "shoulders", path: "/shoulders", componentName: "Shoulders" },
+    { name: "back", path: "/back", componentName: "Back" },
+    { name: "triceps", path: "/triceps", componentName: "Triceps" },
+    { name: "biceps", path: "/biceps", componentName: "Biceps" },
+    { name: "chest", path: "/chest", componentName: "Chest" },
+  ];
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Content exercises={exercises} />}></Route>
-        <Route
-          path="/legs"
-          element={
-            <Legs
-              exercises={exercises.legs}
-              handleCreateExercise={handleCreateExercise}
-              handleDeleteExercise={handleDeleteExercise}
-              handleEditExercise={handleEditExercise}
-              handleAddExecution={handleAddExecution}
-            />
-          }
-        ></Route>
-        <Route
-          path="/shoulders"
-          element={
-            <Shoulders
-              exercises={exercises.shoulders}
-              handleCreateExercise={handleCreateExercise}
-              handleDeleteExercise={handleDeleteExercise}
-              handleEditExercise={handleEditExercise}
-              handleAddExecution={handleAddExecution}
-            />
-          }
-        ></Route>
-        <Route
-          path="/back"
-          element={
-            <Back
-              exercises={exercises.back}
-              handleCreateExercise={handleCreateExercise}
-              handleDeleteExercise={handleDeleteExercise}
-              handleEditExercise={handleEditExercise}
-              handleAddExecution={handleAddExecution}
-            />
-          }
-        ></Route>
-        <Route
-          path="/triceps"
-          element={
-            <Triceps
-              exercises={exercises.triceps}
-              handleCreateExercise={handleCreateExercise}
-              handleDeleteExercise={handleDeleteExercise}
-              handleEditExercise={handleEditExercise}
-              handleAddExecution={handleAddExecution}
-            />
-          }
-        ></Route>
-        <Route
-          path="/biceps"
-          element={
-            <Biceps
-              exercises={exercises.biceps}
-              handleCreateExercise={handleCreateExercise}
-              handleDeleteExercise={handleDeleteExercise}
-              handleEditExercise={handleEditExercise}
-              handleAddExecution={handleAddExecution}
-            />
-          }
-        ></Route>
-        <Route
-          path="/chest"
-          element={
-            <Chest
-              exercises={exercises.chest}
-              handleCreateExercise={handleCreateExercise}
-              handleDeleteExercise={handleDeleteExercise}
-              handleEditExercise={handleEditExercise}
-              handleAddExecution={handleAddExecution}
-            />
-          }
-        ></Route>
+        {parts.map((item) => {
+          return (
+            <Route
+              key={item.name}
+              path={item.name}
+              element={
+                <Set
+                  setType={item.name}
+                  exercises={exercises[item.name]}
+                  handleCreateExercise={handleCreateExercise}
+                  handleDeleteExercise={handleDeleteExercise}
+                  handleEditExercise={handleEditExercise}
+                  handleAddExecution={handleAddExecution}
+                />
+              }
+            ></Route>
+          );
+        })}
       </Route>
     </Routes>
   );
