@@ -17,6 +17,11 @@ export const SetStyled = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   position: relative;
   z-index: 1003;
+  @media (min-width: 768px) {
+    transform: scale(0.26);
+    /* margin-top: -57vw;
+    margin-bottom: -57vw; */
+  }
 `;
 
 export const HeaderMenu = styled.div`

@@ -4,12 +4,21 @@ import {
   Media,
   MediaInfo,
   MediaParagraph,
+  Button,
 } from "./Layout.styled";
+import { useState } from "react";
 
 const Layout = () => {
+  const [modal, setModal] = useState(true);
+
+  const onModalClick = () => {
+    setModal(!modal);
+    console.log(11111111, modal);
+  };
+
   return (
     <LayoutStyled>
-      <Media>
+      {/* <Media>
         <MediaInfo>
           <MediaParagraph>
             На даний момент доступна тільки мобільна версія сайту
@@ -19,7 +28,22 @@ const Layout = () => {
             розробника (f12)
           </MediaParagraph>
         </MediaInfo>
-      </Media>
+      </Media> */}
+      {modal && (
+        <Media>
+          <MediaInfo>
+            <MediaParagraph>
+              Застосунок знаходиться на етапі розробки. Зустрічаються нерівності
+              в графічному інтерфейсі ПК версії сайту. Для кращої взаємодії
+              використайте ваш смартфон або відкрийте інструменти розробника
+              (f12)
+            </MediaParagraph>
+            <Button type="button" onClick={onModalClick}>
+              ОК
+            </Button>
+          </MediaInfo>
+        </Media>
+      )}
       <Outlet />
     </LayoutStyled>
   );

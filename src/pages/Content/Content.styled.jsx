@@ -9,6 +9,11 @@ import imageThree from "../../media/chest.png";
 
 export const StyledContent = styled.div`
   position: relative;
+  @media (min-width: 768px) {
+    transform: scale(0.26);
+    margin-top: -57vw;
+    margin-bottom: -57vw;
+  }
 `;
 
 export const ContentStyled = styled.div`
@@ -25,11 +30,10 @@ export const Header = styled.div`
 
 export const Logo = styled.img`
   width: 54vw;
+  margin-bottom: 4vw;
   position: absolute;
   top: 0vw;
   z-index: 1001;
-  width: 54vw;
-  margin-bottom: 4vw;
 `;
 
 export const Title = styled.h1`

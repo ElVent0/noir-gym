@@ -7,20 +7,16 @@ export const LayoutStyled = styled.div`
   @media (min-width: 768px) {
     padding: 0;
   }
-  /* @media (min-width: 768px) {
-    transform: scale(0.4);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  @media (min-width: 1200px) {
-    transform: scale(0.24);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  } */
+`;
+
+export const Button = styled.div`
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 1vw;
+  width: 4vw;
+  padding: 0.4vw;
+  font-size: 1.2vw;
+  text-align: center;
 `;
 
 export const Media = styled.div`
@@ -33,7 +29,6 @@ export const Media = styled.div`
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(5vw);
-
   @media (max-width: 768px) {
     display: none;
   }
