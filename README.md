@@ -1,7 +1,7 @@
-<!-- # Noir Weather
+# Noir Gym
 
-![ElVent0](./assets/noir-weather.jpg)
+![ElVent0](./assets/noir-gym.jpg)
 
-- A site for viewing weather forecasts from around the world. Requests are sent to an api containing all data
+- A site for tracking the progress of training in the gym
 - html, css|scss, js, REACT, HOOKS
-- Made with create-react-app -->
+- Made with create-react-app
