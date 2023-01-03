@@ -13,7 +13,6 @@ const Layout = () => {
 
   const onModalClick = () => {
     setModal(!modal);
-    console.log(11111111, modal);
   };
 
   return (
