@@ -2,8 +2,54 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const SetStyled = styled.div`
-  width: 100%;
-  min-height: 95.5vh;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+`;
+
+export const Gradient = styled.div`
+  position: fixed;
+  z-index: 1000;
+  background: radial-gradient(
+    #dd8effd6 4%,
+    #d778ff84 20%,
+    #d778ff20 50%,
+    transparent 70%
+  );
+  width: 300vw;
+  height: 300vw;
+  top: -150vw;
+  left: -150vw;
+  animation: animateRotate 10000ms infinite linear 1000ms;
+  opacity: 0.6;
+
+  @keyframes animateRotate {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(100vw, 0);
+    }
+    50% {
+      transform: translate(100vw, 100vh);
+    }
+    75% {
+      transform: translate(0, 100vh);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+`;
+
+export const SetContainer = styled.div`
+  /* width: 100%;
+  height: 100%; */
+  /* min-height: 95.5vh; */
+  top: -46vw;
   border-radius: 2vw;
   padding: 4vw;
   background: linear-gradient(
@@ -17,6 +63,7 @@ export const SetStyled = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   position: relative;
   z-index: 1003;
+
   @media (min-width: 768px) {
     transform: scale(0.26);
     /* margin-top: -57vw;
@@ -293,41 +340,6 @@ export const InfoBlock = styled.div`
       background: linear-gradient(180deg, #d778ff 2.54%, #b66cff 100%);
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       color: #f9f9f9;
-    }
-  }
-`;
-
-export const Gradient = styled.div`
-  position: fixed;
-  z-index: 1000;
-  background: radial-gradient(
-    #dd8effd6 4%,
-    #d778ff84 20%,
-    #d778ff20 50%,
-    transparent 70%
-  );
-  width: 300vw;
-  height: 300vw;
-  top: -150vw;
-  left: -150vw;
-  animation: animateRotate 10000ms infinite linear 1000ms;
-  opacity: 0.6;
-
-  @keyframes animateRotate {
-    0% {
-      transform: translate(0, 0);
-    }
-    25% {
-      transform: translate(100vw, 0);
-    }
-    50% {
-      transform: translate(100vw, 100vh);
-    }
-    75% {
-      transform: translate(0, 100vh);
-    }
-    100% {
-      transform: translate(0, 0);
     }
   }
 `;

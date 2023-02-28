@@ -1,4 +1,3 @@
-import Layout from "./Layout/Layout";
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { presetOne } from "../data/presets";
@@ -136,38 +135,29 @@ const App = () => {
     }));
   };
 
-  const parts = [
-    { name: "legs", path: "/legs", componentName: "Legs" },
-    { name: "shoulders", path: "/shoulders", componentName: "Shoulders" },
-    { name: "back", path: "/back", componentName: "Back" },
-    { name: "triceps", path: "/triceps", componentName: "Triceps" },
-    { name: "biceps", path: "/biceps", componentName: "Biceps" },
-    { name: "chest", path: "/chest", componentName: "Chest" },
-  ];
+  const parts = ["legs", "shoulders", "back", "triceps", "biceps", "chest"];
 
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Content exercises={exercises} />}></Route>
-        {parts.map((item) => {
-          return (
-            <Route
-              key={item.name}
-              path={item.name}
-              element={
-                <Set
-                  setType={item.name}
-                  exercises={exercises[item.name]}
-                  handleCreateExercise={handleCreateExercise}
-                  handleDeleteExercise={handleDeleteExercise}
-                  handleEditExercise={handleEditExercise}
-                  handleAddExecution={handleAddExecution}
-                />
-              }
-            ></Route>
-          );
-        })}
-      </Route>
+      <Route path="/" element={<Content exercises={exercises} />}></Route>
+      {parts.map((item) => {
+        return (
+          <Route
+            key={item}
+            path={item}
+            element={
+              <Set
+                setType={item}
+                exercises={exercises[item]}
+                handleCreateExercise={handleCreateExercise}
+                handleDeleteExercise={handleDeleteExercise}
+                handleEditExercise={handleEditExercise}
+                handleAddExecution={handleAddExecution}
+              />
+            }
+          ></Route>
+        );
+      })}
     </Routes>
   );
 };

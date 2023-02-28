@@ -1,5 +1,6 @@
 import {
   SetStyled,
+  SetContainer,
   HeaderMenu,
   Link,
   ButtonAdd,
@@ -120,9 +121,9 @@ const Set = ({
   };
 
   return (
-    <>
+    <SetStyled>
       <Gradient></Gradient>
-      <SetStyled>
+      <SetContainer>
         <HeaderMenu>
           <Link to="/">
             <BsArrowLeftShort />
@@ -269,7 +270,7 @@ const Set = ({
             </ButtonAdd>
           </InfoBlock>
         )}
-      </SetStyled>
+      </SetContainer>
       {openModal.status === "add" && (
         <ModalAddExercise
           onCloseModal={onCloseModal}
@@ -302,7 +303,7 @@ const Set = ({
           id={openModal.id}
         />
       )}
-    </>
+    </SetStyled>
   );
 };
 
